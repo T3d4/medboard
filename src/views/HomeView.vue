@@ -1,9 +1,21 @@
-<script setup>
+<template>
+  <div>
+    <div class="flex h-screen">
+      <SideBar />
+      <div class="w-screen h-[50px]">
+        <HeaderBar />
+        <div>
+          <ContentView />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
+<script setup>
+import SideBar from '../components/SideBar.vue'
+import HeaderBar from '../components/HeaderBar.vue'
+import ContentView from '../views/ContentView.vue'
 </script>
 
-<template>
-  <main>
-    <h1 class="text-green-700 text-4xl">Hello world</h1>
-  </main>
-</template>
+<style lang="scss" scoped></style>
