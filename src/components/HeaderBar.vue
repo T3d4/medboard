@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full bg-gray-800">
-    <div class="flex justify-between items-center h-[50px] text-white">Header</div>
+  <div class="w-full bg-dashboard-secondary">
+    <div class="flex justify-between items-center h-[70px] text-white">Header</div>
   </div>
 </template>
 
