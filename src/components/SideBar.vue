@@ -1,5 +1,7 @@
 <template>
-  <div class="justify-center overflow-auto bg-dashboard-primary text-white text-center navbar sidebar">
+  <div
+    class="justify-center overflow-auto bg-dashboard-primary text-white text-center navbar sidebar"
+  >
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
         <router-link to="" class="h-[70%] w-[70%] justify-center cursor-pointer my-4">
@@ -20,7 +22,7 @@
       <h6 class="text-center mr-4">Admin</h6>
     </div>
     <div class="">
-      <Accordion v-for="label in labels" :key="label.id" :label="label" />
+      <Accordion :labels="label" />
     </div>
   </div>
 </template>
@@ -28,6 +30,9 @@
 <script setup>
 import Accordion from './Accordion.vue'
 import labels from '../data/label.json'
+import { ref } from 'vue'
+
+const label = ref(labels)
 </script>
 
 <style scoped>
