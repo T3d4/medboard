@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "title": "Dashboard",
+    "icon": "dashboard",
+    "label": ["Medboard"]
+  },
+  {
+    "id": 2,
+    "title": "Doctor",
+    "icon": "",
+    "label": ["Add Doctor", "Doctor List"]
+  },
+  {
+    "id": 3,
+    "title": "Patient",
+    "icon": "",
+    "label": ["Add Patient", "patient List"]
+  },
+  {
+    "id": 4,
+    "title": "Department",
+    "icon": "",
+    "label": ["Add Department", "Department List"]
+  },
+  {
+    "id": 5,
+    "title": "Doctor Schedule",
+    "icon": "",
+    "label": ["Add Schedule", "Schedule List"]
+  },
+  {
+    "id": 6,
+    "title": "Appointment",
+    "icon": "",
+    "label": ["Add Appointment", "Appointment List"]
+  },
+  {
+    "id": 7,
+    "title": "Payment",
+    "icon": "",
+    "label": ["Add Payment", "Payment List", "Payment Invoice"]
+  },
+  {
+    "id": 8,
+    "title": "Report",
+    "icon": "",
+    "label": ["Patient Wise Report", "Doctor Wise Report", "Total Report"]
+  },
+  {
+    "id": 9,
+    "title": "Human Resource",
+    "icon": "",
+    "label": [
+      "Add Employee",
+      "Employee List",
+      "Add nurse",
+      "Nurse List",
+      "Add Pharmacist",
+      "Pharmacist List",
+      "Add Representative",
+      "Representative List"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Bed Manager",
+    "icon": "",
+    "label": ["Add Bed", "Bed List"]
+  },
+  {
+    "id": 11,
+    "title": "Notice",
+    "icon": "",
+    "label": ["Add Notice", "Notice List"]
+  }
+]
