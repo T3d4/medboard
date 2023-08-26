@@ -30,13 +30,11 @@ const toggleSidebar = () => {
 }
 
 .navbar-open {
- width: 25%;/* Adjust the width to your desired value */
-  
+  width: 25%; /* Adjust the width to your desired value */
 }
 
 .navbar-closed {
   width: 0;
   padding: 0; /* Reset padding for closed state */
 }
-
 </style>
