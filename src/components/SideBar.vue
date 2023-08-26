@@ -2,13 +2,13 @@
   <div class="justify-center overflow-auto bg-dashboard-primary text-white text-center navbar sidebar">
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
-        <router-link to="" class="h-[70%] w-[70%] align-middle cursor-pointer my-4">
+        <router-link to="" class="h-[70%] w-[70%] justify-center cursor-pointer my-4">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/medboard-logo-216x62.png"
           />
         </router-link>
       </div>
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center">
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
@@ -16,8 +16,8 @@
           />
         </router-link>
       </div>
-      <h5 class="text-center font-bold text-lg my-2">Dr.Samuel</h5>
-      <h6 class="text-center">Admin</h6>
+      <h5 class="text-center justify-center mr-4 font-bold text-lg my-2">Dr.Samuel</h5>
+      <h6 class="text-center mr-4">Admin</h6>
     </div>
     <div class="">
       <Accordion v-for="label in labels" :key="label.id" :label="label" />
