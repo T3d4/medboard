@@ -42,7 +42,6 @@ const toggleSection = (index) => {
   for (let i = 0; i < labels.value.length; i++) {
     if (i === index - 1) {
       labels.value[i].open = !labels.value[i].open
-      console.log(i, index, labels.value.length)
     } else {
       labels.value[i].open = false
     }
