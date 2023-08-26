@@ -11,7 +11,12 @@
       <span class="down-Arrow ml-[80px] border-none" v-show="!active">&#9660;</span>
       <span class="up-Arrow ml-[80px] border-none" v-show="active">&#9650;</span>
     </router-link>
-    <div class="bg-slate-100 text-black p-2 hover:text-dashboard-primary" v-show="active">Hey</div>
+    <div
+      class="bg-slate-100 text-[#4E4E4E] py-3 font-[14px] text-left pl-[60px] hover:text-dashboard-primary text-sm"
+      v-show="active"
+    >
+      Medboard
+    </div>
   </div>
 </template>
 
