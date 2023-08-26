@@ -1,29 +1,39 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="flex flex-col my-1">
+  <div class="flex flex-col whitespace-nowrap justify-between w-full">
     <router-link
       to=""
-      class="p-4 mt-4 hover:bg-blue-600 w-full flex no-underline text-white"
+      class="p-4 mt-3 hover:bg-blue-600 w-full flex no-underline text-white"
       @click.prevent="active = !active"
     >
-      <span class="material-symbols-outlined text-base ml-2 mr-4"> dashboard </span>
-      <p>{{ title }} Dashboard</p>
-      <span class="down-Arrow ml-[80px] border-none" v-show="!active">&#9660;</span>
-      <span class="up-Arrow ml-[80px] border-none" v-show="active">&#9650;</span>
+      <span class="material-symbols-outlined text-base ml-2 mr-4">
+        {{ props.label.icon }}
+      </span>
+      <p>{{ props.label.title }}</p>
+      <span class="down-Arrow ml-auto border-none" v-show="!active">&#9660;</span>
+      <span class="up-Arrow ml-auto border-none " v-show="active">&#9650;</span>
     </router-link>
     <div
-      class="bg-slate-100 text-[#4E4E4E] py-3 font-[14px] text-left pl-[60px] hover:text-dashboard-primary text-sm"
+      class="bg-slate-100 text-[#4E4E4E] py-3 font-[14px] text-left pl-[40px] hover:text-dashboard-primary text-sm"
       v-show="active"
+      v-for="label in props.label.label"
+      :key="label.id"
     >
-      Medboard
+      {{ label }}
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+// eslint-disable-next-line no-unused-vars
+const props = defineProps({
+  label: Object
+})
 
-const active = ref(true)
+console.log(props.label)
+
+const active = ref(false)
 </script>
 
 <style scoped>

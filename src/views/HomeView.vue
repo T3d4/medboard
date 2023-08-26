@@ -1,7 +1,6 @@
 <template>
-  <div>
     <div class="flex h-screen">
-      <SideBar />
+        <SideBar />
       <div class="w-screen h-[50px]">
         <HeaderBar />
         <div>
@@ -9,7 +8,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
