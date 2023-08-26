@@ -12,7 +12,7 @@
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
-            class="rounded-full w-[50%] h-[50%] ml-10 ring-white ring-4"
+            class="rounded-full w-[50%] h-[50%] ml-10 ring-2 ring-white "
           />
         </router-link>
       </div>
