@@ -49,7 +49,7 @@ const toggleSection = (index) => {
 }
 </script>
 
-<style scoped>
+<style>
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,

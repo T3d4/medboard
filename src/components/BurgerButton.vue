@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="toggle">
-      <span class="material-symbols-outlined mx-8 text-[35px]"> menu </span>
+      <span class="material-symbols-outlined my-auto mx-8 text-[35px]"> menu </span>
     </button>
   </div>
 </template>

@@ -4,22 +4,23 @@
   >
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
-        <router-link to="" class="h-[70%] w-[70%] justify-center cursor-pointer my-4">
+        <router-link to="" class="h-[70%] w-[70%] cursor-pointer my-4">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/medboard-logo-216x62.png"
+            class="mx-auto mb-4 w-[70%] h-[70%]"
           />
         </router-link>
       </div>
       <div class="">
-        <router-link to="" class="h-[70%] w-[70%] cursor-pointer">
+        <router-link to="" class="cursor-pointer">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
-            class="rounded-full w-[50%] h-[50%] mx-auto ring-2 ring-white"
+            class="rounded-full w-[30%] h-[30%] mx-auto mb-4 ring-4 ring-white"
           />
         </router-link>
       </div>
       <h5 class=" font-bold text-lg my-2">Dr.Samuel</h5>
-      <h6 class="">Admin</h6>
+      <h6>Admin</h6>
     </div>
     <div class="">
       <Accordion :labels="label" />
