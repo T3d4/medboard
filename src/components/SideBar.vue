@@ -1,6 +1,6 @@
 <template>
   <div
-    class="justify-center overflow-auto bg-dashboard-primary text-white text-center navbar sidebar"
+    class="justify-center overflow-auto bg-dashboard-primary text-white text-center w-max-[255px] navbar sidebar"
   >
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
@@ -11,7 +11,7 @@
           />
         </router-link>
       </div>
-      <div class="">
+      <div>
         <router-link to="" class="cursor-pointer">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
