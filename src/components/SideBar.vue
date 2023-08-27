@@ -10,16 +10,16 @@
           />
         </router-link>
       </div>
-      <div class="flex justify-center">
+      <div class="">
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
-            class="rounded-full w-[50%] h-[50%] ml-10 ring-2 ring-white"
+            class="rounded-full w-[50%] h-[50%] mx-auto ring-2 ring-white"
           />
         </router-link>
       </div>
-      <h5 class="text-center justify-center mr-4 font-bold text-lg my-2">Dr.Samuel</h5>
-      <h6 class="text-center mr-4">Admin</h6>
+      <h5 class=" font-bold text-lg my-2">Dr.Samuel</h5>
+      <h6 class="">Admin</h6>
     </div>
     <div class="">
       <Accordion :labels="label" />
