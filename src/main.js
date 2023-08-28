@@ -13,10 +13,15 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
+import PrimeVue from 'primevue/config'
+import OverlayPanel from 'primevue/overlaypanel';
+
 library.add(faUserSecret)
 
 const app = createApp(App)
 
+app.use(PrimeVue)
 app.use(router)
 
-app.component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+app.component('OverlayPanel', OverlayPanel)
+app.component('font-awesome-icon', FontAwesomeIcon,).mount('#app')

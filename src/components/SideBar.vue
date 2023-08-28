@@ -5,7 +5,7 @@
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer my-4">
           <img
             src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/medboard-logo-216x62.png"
-            class="mx-auto mb-4 w-[70%] h-[70%]"
+            class="mx-auto mb-3 pt-2 w-[70%] h-[70%]"
           />
         </router-link>
       </div>

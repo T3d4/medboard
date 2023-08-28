@@ -4,7 +4,7 @@
       :class="{ 'navbar-open': isNavbarOpen, 'navbar-closed': !isNavbarOpen }"
       class="navbar"
     />
-    <div class="w-screen h-[50px]">
+    <div class="w-screen">
       <HeaderBar @toggle="toggleSidebar" />
       <div>
         <ContentView />
