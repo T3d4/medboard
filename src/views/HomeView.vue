@@ -1,6 +1,9 @@
 <template>
   <div class="flex h-screen">
-    <SideBar :class="{ 'navbar-open': isNavbarOpen, 'navbar-closed': !isNavbarOpen }" />
+    <SideBar
+      :class="{ 'navbar-open': isNavbarOpen, 'navbar-closed': !isNavbarOpen }"
+      class="navbar"
+    />
     <div class="w-screen h-[50px]">
       <HeaderBar @toggle="toggleSidebar" />
       <div>
@@ -24,7 +27,7 @@ const toggleSidebar = () => {
 }
 </script>
 
-<style>
+<style scoped>
 .navbar {
   transition: width 0.3s ease-in-out;
 }

@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="justify-center overflow-auto bg-dashboard-primary text-white text-center w-max-[255px] navbar sidebar"
-  >
+  <div class="justify-center bg-dashboard-primary overflow-auto text-white text-center sidebar">
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer my-4">
@@ -19,7 +17,7 @@
           />
         </router-link>
       </div>
-      <h5 class=" font-bold text-lg my-2">Dr.Samuel</h5>
+      <h5 class="font-bold text-lg my-2">Dr.Samuel</h5>
       <h6>Admin</h6>
     </div>
     <div class="">
@@ -45,13 +43,19 @@ const label = ref(labels)
   border: 4px solid transparent;
   border-radius: 7px;
   box-shadow: inset 0 0 0 10px;
+  display: none;
 }
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+
 .sidebar::-webkit-scrollbar-button {
   width: 0;
   height: 0;
   display: none;
 }
 .sidebar::-webkit-scrollbar-corner {
-  background-color: transparent;
+  background-color: white;
 }
 </style>
