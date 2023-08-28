@@ -4,44 +4,38 @@
       <BurgerButton @burger="toggle" />
     </div>
     <div class="my-auto mr-4">
-      <ul  class="my-auto mr-4 items-center text-white flex mx-auto">
-        
+      <ul class="my-auto mr-4 items-center text-white flex mx-auto list-none">
         <li class="ml-6">
-          <span class="material-symbols-outlined">
-            notifications
-            </span>
           <router-link to="">
-            
-            Make an Appointment
+            <span class="material-symbols-outlined align-middle text-[30px]"> calendar_month </span>
+            Make an appointment
           </router-link>
         </li>
         <li class="ml-6">
-          <span class="material-symbols-outlined ">
-            notifications
-            </span>
           <router-link to="">
+            <span class="material-symbols-outlined align-middle text-[30px]"> edit </span>
             Write a prescribtion
           </router-link>
         </li>
-        <li class="ml-6 inline-block relative">
+        <li class="ml-6">
           <router-link class="" to="">
-            <i class="material-symbols-outlined">
-              note_alt
-            </i>
+            <span class="material-symbols-outlined align-middle text-[30px]"> note_alt </span>
             Generate Report
           </router-link>
         </li>
-        <li class="ml-6 justify-center"> <router-link to="">
-          <span class="material-symbols-outlined">
-            notifications
-            </span>
-        </router-link></li>
-        <li class="ml-6"> <router-link to="">
-          <img
-          src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
-          class="rounded-full block w-[40px] float-right"
-        />
-        </router-link></li>
+        <li class="ml-6 justify-center">
+          <router-link to="">
+            <span class="material-symbols-outlined text-[30px]"> notifications </span>
+          </router-link>
+        </li>
+        <li class="ml-6">
+          <router-link to="">
+            <img
+              src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
+              class="rounded-full w-[40px] align-middle float-right"
+            />
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -62,5 +56,4 @@ const toggle = () => {
 #app {
   text-align: center;
 }
-
 </style>
