@@ -24,6 +24,7 @@ import Chip from 'primevue/chip'
 import Divider from 'primevue/divider'
 import Dialog from 'primevue/dialog'
 import Calendar from 'primevue/calendar'
+import InputText from 'primevue/inputtext'
 
 library.add(faGear)
 
@@ -38,3 +39,4 @@ app.component('Chip', Chip)
 app.component('Divider', Divider)
 app.component('Dialog', Dialog)
 app.component('Calendar', Calendar)
+app.component('InputText', InputText)
