@@ -22,6 +22,8 @@ import 'primevue/resources/themes/lara-light-indigo/theme.css'
 import Menu from 'primevue/menu'
 import Chip from 'primevue/chip'
 import Divider from 'primevue/divider'
+import Dialog from 'primevue/dialog'
+import Calendar from 'primevue/calendar'
 
 library.add(faGear)
 
@@ -34,3 +36,5 @@ app.component('font-awesome-icon', FontAwesomeIcon).mount('#app')
 app.component('Menu', Menu)
 app.component('Chip', Chip)
 app.component('Divider', Divider)
+app.component('Dialog', Dialog)
+app.component('Calendar', Calendar)

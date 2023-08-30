@@ -23,7 +23,6 @@ const isNavbarOpen = ref(false)
 
 const toggleSidebar = () => {
   isNavbarOpen.value = !isNavbarOpen.value
-  console.log('toggled')
 }
 </script>
 

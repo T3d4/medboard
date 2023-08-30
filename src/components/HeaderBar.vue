@@ -21,7 +21,8 @@
             Write a prescribtion
           </router-link>
         </li>
-        <li class="p-3" @click="show">
+        <!-- GENERATE REPORT -->
+        <li class="p-3" @click="reportVisible">
           <router-link class="" to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]"> note_alt </span>
             Generate Report
@@ -106,7 +107,11 @@ import profileDropdown from '../data/profileDropdown.json'
 const profileMenu = ref(profileDropdown)
 const menu = ref()
 const notification = ref()
-const emit = defineEmits(['toggle'])
+const emit = defineEmits(['toggle', 'visible'])
+
+const reportVisible = () => {
+  emit('visible')
+}
 
 const show = (event) => {
   menu.value.toggle(event)
@@ -118,7 +123,6 @@ const notify = (event) => {
 
 const toggle = () => {
   emit('toggle')
-  console.log('not working', emit)
 }
 </script>
 
