@@ -21,30 +21,76 @@
             Write a prescribtion
           </router-link>
         </li>
-        <li class="p-3">
+        <li class="p-3" @click="show">
           <router-link class="" to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]"> note_alt </span>
             Generate Report
           </router-link>
         </li>
-        <li class="p-3">
+        <!-- NOTIFICATIONS -->
+        <li class="p-3" @click="notify">
           <router-link to="" class="relative">
             <span class="material-symbols-outlined align-middle text-[28px]"> notifications </span>
-            <span class="notification-badge"></span>
+            <span class="notification-badge" />
           </router-link>
+          <Menu
+            ref="notification"
+            :popup="true"
+            id="overlay_menu"
+            :pt="{ root: { style: { width: '300px' } } }"
+          >
+            <template #start>
+              <ul>
+                <li>
+                  <div class="flex items-center justify-center text-center h-[40px] ml-2">
+                    <span>Notifications</span>
+                    <Chip
+                      class="pl-0 pr-3 ml-2 mx-auto flex items-center justify-content-center"
+                      :pt="{
+                        root: { style: { background: '#009efb' } }
+                      }"
+                    >
+                      <div class="text-white">
+                        <span class="border-circle">4</span>
+                        <span class="ml-1 font-medium">New</span>
+                      </div>
+                    </Chip>
+                  </div>
+                </li>
+                <Divider :pt="{ root: { style: { 'margin-top': '0' } } }" />
+                <router-link to="">
+                  <li>
+                    <div class="flex flex-col w-full">
+                      <span>Hello World</span>
+                      <span>45mins</span>
+                    </div>
+                  </li>
+                </router-link>
+              </ul>
+            </template>
+          </Menu>
         </li>
-        <li class="p-3 relative" @click="show" aria-haspopup="true" aria-controls="overlay_menu">
+        <!-- PROFILE MENU -->
+        <li class="p-3" @click="show">
           <router-link to="">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-3.jpg"
               class="rounded-full w-[40px] float-right"
             />
-              <Menu :model="profileMenu" ref="menu" id="overlay_menu" :popup="true" class="p-5">
-                <template #start>
-                  <span class="w-full mx-auto text-center  p-2  text-slate-500 font-Lato my-2 block">Welcome Dr.Samuel Deo</span>
-                </template>
-              </Menu>
           </router-link>
+          <Menu
+            :model="profileMenu"
+            ref="menu"
+            id="overlay_menu"
+            :popup="true"
+            class="overlay_menu"
+          >
+            <template #start>
+              <span class="w-full mx-auto text-center p-2 text-slate-500 font-Lato my-2 flex"
+                >Welcome Dr.Samuel Deo</span
+              >
+            </template>
+          </Menu>
         </li>
       </ul>
     </div>
@@ -59,16 +105,21 @@ import profileDropdown from '../data/profileDropdown.json'
 
 const profileMenu = ref(profileDropdown)
 const menu = ref()
+const notification = ref()
 const emit = defineEmits(['toggle'])
 
 const show = (event) => {
   menu.value.toggle(event)
 }
+
+const notify = (event) => {
+  notification.value.toggle(event)
+}
+
 const toggle = () => {
   emit('toggle')
   console.log('not working', emit)
 }
-
 </script>
 
 <style scoped>

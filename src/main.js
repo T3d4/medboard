@@ -5,7 +5,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import 'primeicons/primeicons.css';
+import 'primeicons/primeicons.css'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -20,6 +20,8 @@ import PrimeVue from 'primevue/config'
 import 'primevue/resources/themes/lara-light-indigo/theme.css'
 
 import Menu from 'primevue/menu'
+import Chip from 'primevue/chip'
+import Divider from 'primevue/divider'
 
 library.add(faGear)
 
@@ -30,3 +32,5 @@ app.use(router)
 
 app.component('font-awesome-icon', FontAwesomeIcon).mount('#app')
 app.component('Menu', Menu)
+app.component('Chip', Chip)
+app.component('Divider', Divider)

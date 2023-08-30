@@ -1,0 +1,26 @@
+[
+  {
+    "separator": true
+  },
+  {
+    "label": "There's a new patient in the ward"
+  },
+  {
+    "label": "Your presence is required in the ICU"
+  },
+  {
+    "label": "The new batch of medications have arrived"
+  },
+  {
+    "label": "Your account was logged in from an unauthorised ip"
+  },
+  {
+    "label": "An application form has been submitted"
+  },
+  {
+    "separator": true
+  },
+  {
+    "label": "See all notifications"
+  }
+]
