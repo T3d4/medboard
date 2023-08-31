@@ -22,9 +22,8 @@
               <InputText id="name" type="text" placeholder="Enter name" class="h-10" />
             </div>
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
-              <label for="bday" class="mb-2 mt-2 text-black">Date of Birth</label>
+              <label class="mb-2 mt-2 text-black">Date of Birth</label>
               <Calendar
-                id="bday"
                 v-model="value"
                 show-icon
                 :class="{ 'p-invalid': errorMessage }"
@@ -62,8 +61,8 @@
               />
             </div>
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px] mb-[50px]">
-              <label for="bday" class="mb-2 mt-8 text-black">Appointment Date</label>
-              <Calendar id="bday" show-icon class="h-10" placeholder="dd / mm / yyyy" />
+              <label class="mb-2 mt-8 text-black">Appointment Date</label>
+              <Calendar show-icon class="h-10" placeholder="dd / mm / yyyy" />
             </div>
             <div class="flex flex-col ml-1 mb-[50px] min-w-[200px] mr-2 w-[300px]">
               <label class="mb-2 mt-8 text-black">Sex</label>
