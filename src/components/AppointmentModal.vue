@@ -15,7 +15,7 @@
       <h6 class="font-extrabold text-black mt-6 font-Lato">PATIENT INFORMATION</h6>
       <Divider />
       <div>
-        <form @submit="onSubmit" class="box-border">
+        <form @submit="onSubmit" class="">
           <div class="flex justify-between flex-row">
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
               <label for="name" class="mb-2 mt-2 text-black">Patient Name</label>
@@ -51,8 +51,8 @@
               <InputText id="location" type="text" placeholder="Report Period" class="h-10" />
             </div>
           </div>
-          <div class="flex flex-row">
-            <div class="flex flex-col mb-[50px] mr-2 min-w-[100px] w-[292px]">
+          <div class="flex flex-row justify-between">
+            <div class="flex flex-col mb-[50px] mr-2 min-w-[100px] w-[300px]">
               <label class="mb-2 mt-8 text-black" for="appointment">Appointment With</label>
               <InputText
                 id="appointment"
@@ -65,14 +65,14 @@
               <label for="bday" class="mb-2 mt-8 text-black">Appointment Date</label>
               <Calendar id="bday" show-icon class="h-10" placeholder="dd / mm / yyyy" />
             </div>
-            <div class="flex flex-col ml-1 mb-[50px]">
+            <div class="flex flex-col ml-1 mb-[50px] min-w-[200px] mr-2 w-[300px]">
               <label class="mb-2 mt-8 text-black">Sex</label>
               <div class="flex flex-row">
                 <div @click="checked.female=false">
                   <Checkbox value="male" :binary="true" class="mt-2" inputId="male" v-model="checked.male"/>
-                  <label for="male" class="ml-3">Male</label>
+                  <label for="male" class="ml-3 mr-3 text-left">Male</label>
                 </div>
-                <div class="ml-5" @click="checked.male=false">
+                <div @click="checked.male=false">
                   <Checkbox value="female" :binary="true" class="mt-2" inputId="female" v-model="checked.female" />
                   <label for="female" class="ml-3">Female</label>
                 </div>
@@ -81,10 +81,10 @@
           </div>
           <div class="flex">
             <div class="mr-3 text-sm font-Lato font-light">
-              <Button label="Save Prescription" severity="warning" style="font-size: 14px" />
+              <Button label="Reset" severity="warning" style="font-size: 14px" />
             </div>
             <div class="">
-              <Button label="Save & Print" severity="info" style="font-size: 14px" />
+              <Button label="Add Appointment" severity="info" style="font-size: 14px" />
             </div>
           </div>
         </form>
