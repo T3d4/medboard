@@ -9,8 +9,8 @@
         header: { style: { 'background-color': '#009efb', color: 'white' } },
         closeButtonIcon: { style: { color: 'white' } },
         headerIcons: { class: 'hover:border-red-500' },
-        content: { class: 'font-Lato', style:{'padding-left':'40px'} },
-        headerTitle: { class: 'font-Lato', style:{'font-size': '24px'} }
+        content: { class: 'font-Lato', style: { 'padding-left': '40px' } },
+        headerTitle: { class: 'font-Lato', style: { 'font-size': '24px' } }
       }"
     >
       <h6 class="font-extrabold text-black mt-6 font-Lato">PATIENT INFORMATION</h6>
