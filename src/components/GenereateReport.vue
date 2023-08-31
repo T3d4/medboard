@@ -7,8 +7,7 @@
       :style="{ width: '50vw' }"
       :pt="{
         header: { style: { 'background-color': '#009efb', color: 'white' } },
-        closeButtonIcon: { style: { color: 'white' } },
-        headerIcons: { class: 'hover:border-red-500' },
+        closeButtonIcon: { style: { color: 'black' } },
         content: { class: 'font-Lato', style: { 'padding-left': '40px' } },
         headerTitle: { class: 'font-Lato', style: { 'font-size': '24px' } }
       }"
@@ -20,18 +19,12 @@
           <div class="flex justify-between flex-row">
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
               <label for="name" class="mb-2 mt-2 text-black">Patient Name</label>
-              <InputText
-                id="name"
-                v-model="name"
-                type="text"
-                placeholder="Enter name"
-                class="h-10"
-              />
+              <InputText id="name" type="text" placeholder="Enter name" class="h-10" />
             </div>
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
-              <label for="date" class="mb-2 mt-2 text-black">Date of Birth</label>
+              <label for="bday" class="mb-2 mt-2 text-black">Date of Birth</label>
               <Calendar
-                id="date"
+                id="bday"
                 v-model="value"
                 show-icon
                 :class="{ 'p-invalid': errorMessage }"
@@ -59,7 +52,7 @@
             </div>
           </div>
           <div class="flex flex-row">
-            <div class="flex flex-col mb-[50px] mr-[400px] min-w-[100px] w-[300px]">
+            <div class="flex flex-col mb-[50px] mr-[380px] min-w-[100px] w-[292px]">
               <label class="mb-2 mt-8 text-black" for="appointment">Appointment With</label>
               <InputText
                 id="appointment"
