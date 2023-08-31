@@ -26,6 +26,7 @@ import Dialog from 'primevue/dialog'
 import Calendar from 'primevue/calendar'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
+import Checkbox from 'primevue/checkbox'
 
 library.add(faGear)
 
@@ -42,3 +43,4 @@ app.component('Dialog', Dialog)
 app.component('Calendar', Calendar)
 app.component('InputText', InputText)
 app.component('Button', Button)
+app.component('Checkbox', Checkbox)
