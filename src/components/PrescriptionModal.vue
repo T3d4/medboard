@@ -80,7 +80,7 @@
   import { useField, useForm } from 'vee-validate'
   import { ref } from 'vue'
   
-  const visible = ref(true)
+  const visible = ref(false)
   const { handleSubmit, resetForm } = useForm()
   const { value, errorMessage } = useField('date', validateField)
   
