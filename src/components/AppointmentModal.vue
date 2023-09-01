@@ -1,7 +1,7 @@
 <template>
   <div>
     <Dialog
-      v-model:visible="visible"
+      v-model:visible="showModal.appointment"
       modal
       header="Make an Appointment"
       :style="{ width: '50vw' }"
@@ -107,8 +107,8 @@
 <script setup>
 import { useField, useForm } from 'vee-validate'
 import { ref } from 'vue'
+import { showModal } from '../showModal';
 
-const visible = ref(false)
 const checked = ref({ male: false, female: false })
 const { handleSubmit, resetForm } = useForm()
 const { value, errorMessage } = useField('date', validateField)
