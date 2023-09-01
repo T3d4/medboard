@@ -4,28 +4,40 @@
       <div class="basis-1/4 max-w-[25%]">
         <router-link to="">
           <div>
-            <div>Hello Comrade</div>
+            <div>
+              <h6>Hello Comrade</h6>
+              <p>Yet Another Comrade</p>
+            </div>
           </div>
         </router-link>
       </div>
       <div class="basis-1/4 max-w-[25%]">
         <router-link to="">
           <div>
-            <div>Hello Comrade</div>
+            <div>
+              <h6>Hello Comrade</h6>
+              <p>Yet Another Comrade</p>
+            </div>
           </div>
         </router-link>
       </div>
       <div class="basis-1/4 max-w-[25%]">
         <router-link to="">
           <div>
-            <div>Hello Comrade</div>
+            <div>
+              <h6>Hello Comrade</h6>
+              <p>Yet Another Comrade</p>
+            </div>
           </div>
         </router-link>
       </div>
       <div class="basis-1/4 max-w-[25%]">
         <router-link to="">
           <div>
-            <div>Hello Comrade</div>
+            <div>
+              <h6>Hello Comrade</h6>
+              <p>Yet Another Comrade</p>
+            </div>
           </div>
         </router-link>
       </div>
