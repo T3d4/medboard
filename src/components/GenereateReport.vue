@@ -1,7 +1,7 @@
 <template>
   <div>
     <Dialog
-      v-model:visible="visible"
+      v-model:visible="showModal.report"
       modal
       header="Generate report"
       :style="{ width: '50vw' }"
@@ -78,9 +78,8 @@
 
 <script setup>
 import { useField, useForm } from 'vee-validate'
-import { ref } from 'vue'
+import { showModal } from '../showModal';
 
-const visible = ref()
 const { handleSubmit, resetForm } = useForm()
 const { value, errorMessage } = useField('date', validateField)
 
