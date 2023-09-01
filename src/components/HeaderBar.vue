@@ -7,7 +7,7 @@
     </div>
     <div>
       <ul class="flex flex-wrap items-center text-white h-full list-none">
-    <!-- Appointment Button -->
+        <!-- Appointment Button -->
         <li class="p-3" @click="appointment">
           <router-link to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]">
@@ -105,7 +105,7 @@
 import { ref } from 'vue'
 import BurgerButton from './BurgerButton.vue'
 import profileDropdown from '../data/profileDropdown.json'
-import {showModal} from '../showModal'
+import { showModal } from '../showModal'
 
 const profileMenu = ref(profileDropdown)
 const menu = ref()
@@ -124,18 +124,17 @@ const toggle = () => {
   emit('toggle')
 }
 
-const appointment = ()=>{
+const appointment = () => {
   showModal.appointment = !showModal.appointment
 }
 
-const prescribe = ()=>{
+const prescribe = () => {
   showModal.prescribe = !showModal.prescribe
 }
 
-const report = ()=>{
+const report = () => {
   showModal.report = !showModal.report
 }
-
 </script>
 
 <style scoped>

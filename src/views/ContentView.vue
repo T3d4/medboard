@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">Dashboard</div>
+  <MedBoard />
   <GenereateReport />
   <PrescriptionModal />
   <AppointmentModal />
@@ -9,6 +9,7 @@
 import AppointmentModal from '../components/AppointmentModal.vue'
 import GenereateReport from '../components/GenereateReport.vue'
 import PrescriptionModal from '../components/PrescriptionModal.vue'
+import MedBoard from './MedBoard.vue'
 </script>
 
 <style lang="scss" scoped></style>

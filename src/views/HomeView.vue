@@ -5,9 +5,9 @@
       class="navbar"
     />
     <div class="w-screen">
-      <HeaderBar @toggle="toggleSidebar"/>
+      <HeaderBar @toggle="toggleSidebar" />
       <div>
-        <ContentView/>
+        <ContentView />
       </div>
     </div>
   </div>
