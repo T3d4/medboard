@@ -31,7 +31,6 @@
 <script setup>
 import { ref } from 'vue'
 
-// eslint-disable-next-line no-unused-vars
 const props = defineProps({
   labels: Object
 })

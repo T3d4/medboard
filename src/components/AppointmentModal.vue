@@ -110,7 +110,6 @@ function validateField(date) {
 
 const onSubmit = handleSubmit((values) => {
   if (values.value) {
-    console.log('submitted')
     resetForm()
   }
 })
