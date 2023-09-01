@@ -5,9 +5,9 @@
       class="navbar"
     />
     <div class="w-screen">
-      <HeaderBar @toggle="toggleSidebar" />
+      <HeaderBar @toggle="toggleSidebar"/>
       <div>
-        <ContentView />
+        <ContentView/>
       </div>
     </div>
   </div>
@@ -19,7 +19,6 @@ import HeaderBar from '../components/HeaderBar.vue'
 import ContentView from '../views/ContentView.vue'
 import { ref } from 'vue'
 
-const show = ref(true)
 const isNavbarOpen = ref(false)
 
 const toggleSidebar = () => {
