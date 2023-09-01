@@ -19,6 +19,7 @@ import HeaderBar from '../components/HeaderBar.vue'
 import ContentView from '../views/ContentView.vue'
 import { ref } from 'vue'
 
+const show = ref(true)
 const isNavbarOpen = ref(false)
 
 const toggleSidebar = () => {

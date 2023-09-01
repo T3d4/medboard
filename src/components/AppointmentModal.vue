@@ -67,12 +67,24 @@
             <div class="flex flex-col ml-1 mb-[50px] min-w-[200px] mr-2 w-[300px]">
               <label class="mb-2 mt-8 text-black">Sex</label>
               <div class="flex flex-row">
-                <div @click="checked.female=false">
-                  <Checkbox value="male" :binary="true" class="mt-2" inputId="male" v-model="checked.male"/>
+                <div @click="checked.female = false">
+                  <Checkbox
+                    value="male"
+                    :binary="true"
+                    class="mt-2"
+                    inputId="male"
+                    v-model="checked.male"
+                  />
                   <label for="male" class="ml-3 mr-3 text-left">Male</label>
                 </div>
-                <div @click="checked.male=false">
-                  <Checkbox value="female" :binary="true" class="mt-2" inputId="female" v-model="checked.female" />
+                <div @click="checked.male = false">
+                  <Checkbox
+                    value="female"
+                    :binary="true"
+                    class="mt-2"
+                    inputId="female"
+                    v-model="checked.female"
+                  />
                   <label for="female" class="ml-3">Female</label>
                 </div>
               </div>
@@ -96,8 +108,8 @@
 import { useField, useForm } from 'vee-validate'
 import { ref } from 'vue'
 
-const visible = ref(true)
-const checked = ref({male:false, female:false})
+const visible = ref(false)
+const checked = ref({ male: false, female: false })
 const { handleSubmit, resetForm } = useForm()
 const { value, errorMessage } = useField('date', validateField)
 

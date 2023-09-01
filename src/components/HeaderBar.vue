@@ -7,7 +7,7 @@
     </div>
     <div>
       <ul class="flex flex-wrap items-center text-white h-full list-none">
-        <li class="p-3">
+        <li class="p-3" @click="appointment">
           <router-link to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]">
               calendar_month
@@ -15,14 +15,14 @@
             Make an appointment
           </router-link>
         </li>
-        <li class="p-3">
+        <li class="p-3" @click="prescribe">
           <router-link to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]"> edit </span>
             Write a prescribtion
           </router-link>
         </li>
         <!-- GENERATE REPORT -->
-        <li class="p-3" @click="reportVisible">
+        <li class="p-3" @click="report">
           <router-link class="" to="">
             <span class="material-symbols-outlined align-sub px-1 text-[28px]"> note_alt </span>
             Generate Report
@@ -107,11 +107,7 @@ import profileDropdown from '../data/profileDropdown.json'
 const profileMenu = ref(profileDropdown)
 const menu = ref()
 const notification = ref()
-const emit = defineEmits(['toggle', 'visible'])
-
-const reportVisible = () => {
-  emit('visible')
-}
+const emit = defineEmits(['toggle', 'report', 'appointment', 'prescribe'])
 
 const show = (event) => {
   menu.value.toggle(event)

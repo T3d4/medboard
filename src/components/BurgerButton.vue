@@ -7,17 +7,10 @@
 </template>
 
 <script setup>
-// const toggle = defineProps({
-//     toggleSidebar: Function
-// })
-
-// const toggleSidebar = toggle.toggleSidebar;
-
 const emit = defineEmits(['burger'])
 
 const toggle = () => {
   emit('burger')
-  console.log('burger button', emit)
 }
 </script>
 
