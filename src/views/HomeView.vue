@@ -1,11 +1,11 @@
 <template>
   <div class="flex h-screen">
     <SideBar
-      :class="{ 'navbar-open': isNavbarOpen, 'navbar-closed': !isNavbarOpen }"
+      :class="{ 'navbar-open': sideBar.state, 'navbar-closed': !sideBar.state }"
       class="navbar"
     />
     <div class="w-screen">
-      <HeaderBar @toggle="toggleSidebar" />
+      <HeaderBar/>
       <div>
         <ContentView />
       </div>
@@ -17,13 +17,8 @@
 import SideBar from '../components/SideBar.vue'
 import HeaderBar from '../components/HeaderBar.vue'
 import ContentView from '../views/ContentView.vue'
-import { ref } from 'vue'
+import {sideBar} from '../showModal'
 
-const isNavbarOpen = ref(false)
-
-const toggleSidebar = () => {
-  isNavbarOpen.value = !isNavbarOpen.value
-}
 </script>
 
 <style scoped>

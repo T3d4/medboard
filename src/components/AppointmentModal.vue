@@ -107,7 +107,7 @@
 <script setup>
 import { useField, useForm } from 'vee-validate'
 import { ref } from 'vue'
-import { showModal } from '../showModal'
+import {showModal} from '../showModal'
 
 const checked = ref({ male: false, female: true })
 const { handleSubmit, resetForm } = useForm()

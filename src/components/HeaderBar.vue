@@ -3,7 +3,7 @@
     class="w-full p-2 mb-0 bg-dashboard-primary border-x-[20px] border-s-dashboard-primary border-r-dashboard-primary flex flex-wrap items-center relative justify-between header-shadow"
   >
     <div class="flex justify-between items-center h-[70px] text-white">
-      <BurgerButton @burger="toggle" />
+      <BurgerButton/>
     </div>
     <div>
       <ul class="flex flex-wrap items-center text-white h-full list-none">
@@ -105,12 +105,11 @@
 import { ref } from 'vue'
 import BurgerButton from './BurgerButton.vue'
 import profileDropdown from '../data/profileDropdown.json'
-import { showModal } from '../showModal'
+import {showModal}  from '../showModal'
 
 const profileMenu = ref(profileDropdown)
 const menu = ref()
 const notification = ref()
-const emit = defineEmits(['toggle'])
 
 const show = (event) => {
   menu.value.toggle(event)
@@ -118,10 +117,6 @@ const show = (event) => {
 
 const notify = (event) => {
   notification.value.toggle(event)
-}
-
-const toggle = () => {
-  emit('toggle')
 }
 
 const appointment = () => {

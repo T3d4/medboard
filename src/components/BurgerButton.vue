@@ -7,11 +7,12 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['burger'])
 
-const toggle = () => {
-  emit('burger')
+function toggle(){
+  sideBar.state = !sideBar.state
 }
+
+import {sideBar} from '../showModal'
 </script>
 
 <style lang="scss" scoped></style>
