@@ -78,7 +78,7 @@
 
 <script setup>
 import { useField, useForm } from 'vee-validate'
-import {showModal} from '../showModal'
+import { showModal } from '../showModal'
 
 const { handleSubmit, resetForm } = useForm()
 const { value, errorMessage } = useField('date', validateField)

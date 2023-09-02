@@ -5,7 +5,7 @@
       class="navbar"
     />
     <div class="w-screen">
-      <HeaderBar/>
+      <HeaderBar />
       <div>
         <ContentView />
       </div>
@@ -17,8 +17,7 @@
 import SideBar from '../components/SideBar.vue'
 import HeaderBar from '../components/HeaderBar.vue'
 import ContentView from '../views/ContentView.vue'
-import {sideBar} from '../showModal'
-
+import { sideBar } from '../showModal'
 </script>
 
 <style scoped>

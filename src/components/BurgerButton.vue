@@ -7,12 +7,11 @@
 </template>
 
 <script setup>
-
-function toggle(){
+function toggle() {
   sideBar.state = !sideBar.state
 }
 
-import {sideBar} from '../showModal'
+import { sideBar } from '../showModal'
 </script>
 
 <style lang="scss" scoped></style>
