@@ -132,22 +132,28 @@
         </div>
       </div>
       <!-- Second Row / Third -->
-      <div class="basis-1/3 max-w-[33.333%] bg-white my-2">
-        <div class="flex relative justify-center w-full">
-          <div class="relative flex justify-center">
+      <div class="basis-1/3 max-w-[33.333%] bg-white my-2 w-full">
+        <div class="flex flex-col items-center justify-center w-full">
+          <div>
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg"
               alt="doctors"
             />
           </div>
-          <div class="absolute flex-grow bottom-[-40px] flex justify-center">
+          <div class=" flex justify-center max-w-[50%] h-auto">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg"
               alt="doctor"
-              class="rounded-full ring-4 ring-sky-500 min-w-[40px] max-w-[33%] h-auto"
+              class="rounded-full ring-4 ring-sky-500 mt-[-20%] h-auto max-w-[38%]"
             />
           </div>
+          
         </div>
+        <div class="pt-[70px] text-center ">
+          <h2 class="text-2xl text-black font-semibold">Anny Farisha</h2>
+          <p class="font-normal pt-2 text-base text-black">Doctor</p>
+          <p class="pt-5 font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+          </div>
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
