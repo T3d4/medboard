@@ -120,22 +120,32 @@
               <p class="text-3xl pb-2">3,473</p>
             </div>
             <div class="h-fit">
-              <Chart type="line" :data="chartEarning" :options="chartOptions" class="h-[80px] w-[300px]" />
+              <Chart
+                type="line"
+                :data="chartEarning"
+                :options="chartOptions"
+                class="h-[80px] w-[300px]"
+              />
             </div>
           </div>
         </div>
       </div>
       <!-- Second Row / Second -->
       <div class="basis-1/3 max-w-[33.333%] py-2 px-6">
-      <div class="bg-slate-300 flex justify-center">
-        <Calendar v-model="date" inline showWeek class="h-[600px] w-full"/>
-      </div>
+        <div class="bg-slate-300 flex justify-center">
+          <Calendar v-model="date" inline showWeek class="h-[600px] w-full" />
+        </div>
       </div>
       <!-- Second Row / Third -->
-      <div class="basis-1/3 max-w-[33.333%]">
-      <div>
-      <img src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg" alt="doctors"/>
-      </div>
+      <div class="basis-1/3 max-w-[33.333%] bg-white">
+        <div>
+          <div>
+            <img
+              src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg"
+              alt="doctors"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
