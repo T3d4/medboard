@@ -132,29 +132,52 @@
         </div>
       </div>
       <!-- Second Row / Third -->
-      <div class="basis-1/3 max-w-[33.333%] bg-white my-2 w-full">
+      <div class="basis-1/3 max-w-[33.333%] bg-white my-2 w-full rounded-md">
         <div class="flex flex-col items-center justify-center w-full">
-          <div>
+          <div class="relative">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg"
-              alt="doctors"
+              alt="doctors" 
             />
+            <div class="absolute top-0 left-0 w-full h-full bg-dashboard-primary/[0.5]"></div>
           </div>
           <div class="flex justify-center max-w-[50%] h-auto">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg"
               alt="doctor"
-              class="rounded-full ring-4 ring-sky-500 mt-[-20%] h-auto max-w-[38%]"
+              class="rounded-full ring-4 ring-sky-500 mt-[-20%] h-auto max-w-[38%] z-50"
             />
           </div>
         </div>
-        <div class="pt-[70px] text-center">
+        <div class="pt-[40px] text-center">
           <h2 class="text-2xl text-black font-semibold">Anny Farisha</h2>
           <p class="font-normal pt-2 text-base text-black">Doctor</p>
           <p class="pt-5 font-light">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc
           </p>
         </div>
+        <div class="flex justify-center pt-4 h-[50px]">
+          <Button label="Assign" style="background-color: #009efb">
+            <span class="material-symbols-outlined pr-2"> person_add </span>
+            <p>Assign</p>
+          </Button>
+        </div>
+        <div class="w-[95%] mx-auto">
+        <Divider/>
+        </div>
+        <div class="flex flex-row items-center">
+        <div class="text-center pb-8 mx-auto">
+        <h6 class="font-bold text-2xl">5790</h6>
+        <p class="font-normal text-sm">Operations</p>
+        </div>
+        <div class="h-[80px] pb-4">
+        <Divider layout="vertical"/>
+        </div>
+        <div class="mx-auto text-center pb-8">
+        <h6 class="font-bold text-2xl">4.5</h6>
+        <p class="font-normal text-sm">Medical Rating</p>
+        </div>
+      </div>
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
@@ -222,5 +245,22 @@ const setChartOptions = () => {
 <style scoped>
 .card {
   background-image: linear-gradient(90deg, rgba(0, 158, 251, 0.8), #fff);
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 158, 251, 0.5); /* Adjust the color and opacity here */
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 20;
 }
 </style>
