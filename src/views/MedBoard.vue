@@ -11,7 +11,7 @@
               <p class="text-2xl">4567</p>
             </div>
             <div
-              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]"
+              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[30%]"
             >
               <font-awesome-icon
                 icon="stethoscope"
@@ -32,7 +32,7 @@
               <p class="text-2xl">4567</p>
             </div>
             <div
-              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]"
+              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[30%]"
             >
               <font-awesome-icon
                 icon="user-plus"
@@ -53,7 +53,7 @@
               <p class="text-2xl">4567</p>
             </div>
             <div
-              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]"
+              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[30%]"
             >
               <font-awesome-icon
                 icon="wheelchair"
@@ -74,7 +74,7 @@
               <p class="text-2xl">4567</p>
             </div>
             <div
-              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]"
+              class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[30%]"
             >
               <font-awesome-icon
                 icon="briefcase-medical"
