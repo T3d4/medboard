@@ -89,7 +89,7 @@
     </div>
     <!-- Second Row -->
     <div class="flex flex-row px-4 py-6">
-      <div class="max-w-[33.333%] basis-1/3 pr-6 py-2 ">
+      <div class="max-w-[33.333%] basis-1/3 pr-6 py-2">
         <div class="flex flex-col">
           <div class="mb-6 bg-white">
             <div class="text-lg font-bold pl-5">
@@ -97,7 +97,12 @@
               <p class="text-3xl pb-2">4,973</p>
             </div>
             <div>
-              <Chart type="line" :data="chartAppointment" :options="chartOptions" class="h-[100px]"/>
+              <Chart
+                type="line"
+                :data="chartAppointment"
+                :options="chartOptions"
+                class="h-[100px]"
+              />
             </div>
           </div>
           <div class="mb-6 bg-white">
@@ -106,16 +111,16 @@
               <p class="text-3xl pb-2">650</p>
             </div>
             <div>
-              <Chart type="line" :data="chartPatient" :options="chartOptions" class="h-[100px]"/>
+              <Chart type="line" :data="chartPatient" :options="chartOptions" class="h-[100px]" />
             </div>
           </div>
-          <div class=" bg-white">
+          <div class="bg-white">
             <div class="text-lg font-bold pl-5">
               <h6 class="py-4">HOSPITAL EARNING</h6>
               <p class="text-3xl pb-2">3,473</p>
             </div>
             <div class="h-fit">
-              <Chart type="line" :data="chartEarning" :options="chartOptions" class="h-[100px]"/>
+              <Chart type="line" :data="chartEarning" :options="chartOptions" class="h-[100px]" />
             </div>
           </div>
         </div>
@@ -148,7 +153,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import {setAppointment, setPatient, setEarning} from '../data/chartData'
+import { setAppointment, setPatient, setEarning } from '../data/chartData'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -161,8 +166,6 @@ const chartAppointment = ref()
 const chartPatient = ref()
 const chartEarning = ref()
 const chartOptions = ref()
-
-
 
 const setChartOptions = () => {
   return {
