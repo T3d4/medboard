@@ -14,7 +14,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair } from '@fortawesome/free-solid-svg-icons'
+import {
+  faStethoscope,
+  faBriefcaseMedical,
+  faUserPlus,
+  faWheelchair
+} from '@fortawesome/free-solid-svg-icons'
 
 import PrimeVue from 'primevue/config'
 import 'primevue/resources/themes/lara-light-indigo/theme.css'
@@ -27,6 +32,7 @@ import Calendar from 'primevue/calendar'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
+import Chart from 'primevue/chart'
 
 library.add(faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair)
 
@@ -44,3 +50,4 @@ app.component('Calendar', Calendar)
 app.component('InputText', InputText)
 app.component('Button', Button)
 app.component('Checkbox', Checkbox)
+app.component('Chart', Chart)

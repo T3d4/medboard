@@ -11,7 +11,7 @@
       :class="{ 'header-collapse': sideBar.state, 'header-expand': !sideBar.state }"
     >
       <HeaderBar />
-      <div>
+      <div class="bg-slate-200">
         <ContentView />
       </div>
     </div>
