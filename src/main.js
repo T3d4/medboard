@@ -14,7 +14,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair } from '@fortawesome/free-solid-svg-icons'
 
 import PrimeVue from 'primevue/config'
 import 'primevue/resources/themes/lara-light-indigo/theme.css'
@@ -28,7 +28,7 @@ import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
 
-library.add(faGear)
+library.add(faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair)
 
 const app = createApp(App)
 

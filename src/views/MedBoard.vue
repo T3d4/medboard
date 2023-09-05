@@ -1,42 +1,58 @@
 <template>
-  <div class="px-4 py-6 h-full">
-    <div class="flex flex-row pl-5">
-      <div class="basis-1/4 max-w-[25%]">
+  <div class="px-2 py-6 h-full">
+  <!-- Doctors -->
+    <div class="flex flex-row pl-2 pr-5">
+      <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
-          <div>
-            <div>
-              <h6>Hello Comrade</h6>
-              <p>Yet Another Comrade</p>
+          <div class="flex card relative rounded-lg">
+            <div class=" text-white font-Lato font-bold text-lg pl-5 py-3">
+              <h6 class="pb-4">DOCTORS</h6>
+              <p class="text-2xl">4567</p>
+            </div>
+            <div class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]">
+            <font-awesome-icon icon="stethoscope" size="2xl" style="color: #ffffff;" class="mx-auto"/>
             </div>
           </div>
         </router-link>
       </div>
-      <div class="basis-1/4 max-w-[25%]">
+      <!-- Nurses -->
+      <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
-          <div>
-            <div>
-              <h6>Hello Comrade</h6>
-              <p>Yet Another Comrade</p>
+          <div class="flex card relative rounded-lg">
+            <div class="text-white font-Lato font-bold text-lg pl-5 py-3">
+              <h6 class="pb-4">NURSES</h6>
+              <p class="text-2xl">4567</p>
+            </div>
+            <div class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]">
+            <font-awesome-icon icon="user-plus" size="2xl" style="color: #ffffff;" class="mx-auto"/>
             </div>
           </div>
         </router-link>
       </div>
-      <div class="basis-1/4 max-w-[25%]">
+      <!-- Patients -->
+      <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
-          <div>
-            <div>
-              <h6>Hello Comrade</h6>
-              <p>Yet Another Comrade</p>
+          <div class="flex card relative rounded-lg">
+            <div class=" text-white font-Lato font-bold text-lg pl-5 py-3">
+              <h6 class="pb-4">PATIENTS</h6>
+              <p class="text-2xl">4567</p>
+            </div>
+            <div class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]">
+            <font-awesome-icon icon="wheelchair" size="2xl" style="color: #ffffff;" class="mx-auto"/>
             </div>
           </div>
         </router-link>
       </div>
-      <div class="basis-1/4 max-w-[25%]">
+      <!-- Pharmacists -->
+      <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
-          <div>
-            <div>
-              <h6>Hello Comrade</h6>
-              <p>Yet Another Comrade</p>
+          <div class="flex card relative rounded-lg">
+            <div class=" text-white font-Lato font-bold text-lg pl-5 py-3">
+              <h6 class="pb-4">PHARMACISTS</h6>
+              <p class="text-2xl">4567</p>
+            </div>
+            <div class="bg-dashboard-primary rounded-l-[80px] rounded-r-lg absolute right-0 flex items-center h-full w-[112px]">
+            <font-awesome-icon icon="briefcase-medical" size="2xl" style="color: #ffffff;" class="mx-auto"/>
             </div>
           </div>
         </router-link>
@@ -75,3 +91,9 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.card{
+  background-image: linear-gradient(90deg,rgba(0,158,251,.8),#fff);
+}
+</style>
