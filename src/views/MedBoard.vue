@@ -120,12 +120,7 @@
               <p class="text-3xl pb-2">3,473</p>
             </div>
             <div class="h-fit">
-              <Chart
-                type="line"
-                :data="chartEarning"
-                :options="chartOptions"
-                class="h-[80px]"
-              />
+              <Chart type="line" :data="chartEarning" :options="chartOptions" class="h-[80px]" />
             </div>
           </div>
         </div>
@@ -146,7 +141,11 @@
             />
           </div>
           <div class="absolute flex-grow bottom-[-40px] flex justify-center">
-          <img src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg" alt="doctor" class="rounded-full ring-4 ring-sky-500 min-w-[40px] max-w-[33%] h-auto"/>
+            <img
+              src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg"
+              alt="doctor"
+              class="rounded-full ring-4 ring-sky-500 min-w-[40px] max-w-[33%] h-auto"
+            />
           </div>
         </div>
       </div>
