@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 py-6">
+  <div class="px-4 py-6 h-full">
     <div class="flex flex-row pl-5">
       <div class="basis-1/4 max-w-[25%]">
         <router-link to="">

@@ -1,8 +1,10 @@
 <template>
+  <div>
   <MedBoard />
   <GenereateReport />
   <PrescriptionModal />
   <AppointmentModal />
+  </div>
 </template>
 
 <script setup>

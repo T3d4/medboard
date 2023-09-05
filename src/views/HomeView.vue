@@ -1,11 +1,13 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex">
+    <div class="fixed">
     <SideBar
       :class="{ 'navbar-open': sideBar.state, 'navbar-closed': !sideBar.state }"
-      class="navbar"
+      class="navbar h-screen"
     />
-    <div class="w-screen">
-      <HeaderBar />
+    </div>
+    <div class="w-screen h-full overflow-y-auto header-bar" :class="{'header-collapse': sideBar.state, 'header-expand': !sideBar.state}">
+      <HeaderBar/>
       <div>
         <ContentView />
       </div>
@@ -26,11 +28,22 @@ import { sideBar } from '../showModal'
 }
 
 .navbar-open {
-  width: 300px; /* Adjust the width to your desired value */
+  width: 250px;  /* Adjust the width to your desired value */
 }
 
 .navbar-closed {
   width: 0;
   padding: 0; /* Reset padding for closed state */
+}
+
+.header-bar{
+  transition: margin-left 0.3s ease-in-out;
+}
+.header-collapse {
+  margin-left: 250px;
+}
+
+.header-expand {
+  margin-left: 0;
 }
 </style>

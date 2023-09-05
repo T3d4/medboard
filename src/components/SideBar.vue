@@ -1,5 +1,5 @@
 <template>
-  <div class="justify-center bg-dashboard-primary overflow-auto text-white text-center sidebar">
+  <div class="justify-center bg-dashboard-primary overflow-auto text-white text-center sidebar ">
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer my-4">
@@ -20,7 +20,7 @@
       <h5 class="font-bold text-lg my-2">Dr.Samuel</h5>
       <h6>Admin</h6>
     </div>
-    <div class="">
+    <div>
       <Accordion :labels="label" />
     </div>
   </div>
