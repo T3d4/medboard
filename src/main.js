@@ -33,6 +33,7 @@ import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
 import Chart from 'primevue/chart'
+import ProgressBar from 'primevue/progressbar'
 
 library.add(faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair)
 
@@ -51,3 +52,4 @@ app.component('InputText', InputText)
 app.component('Button', Button)
 app.component('Checkbox', Checkbox)
 app.component('Chart', Chart)
+app.component('ProgressBar', ProgressBar)

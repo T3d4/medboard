@@ -180,9 +180,94 @@
         </div>
       </div>
     </div>
-    <!--  -->
-    <div class="flex flex-row px-4 py-6">
-      <div class="basis-1/2 max-w-[50%]">3Rd Row</div>
+    <!-- Third Row -->
+    <div class="flex">
+      <div class="basis-1/2 max-w-[50%] px-4 py-2">
+      <div class="bg-white px-4 py-4">
+        <div>
+          <h3 class="text-black font-bold">HOSPITAL BIRTH & DEATH ANALYTICS</h3>
+        </div>
+        <Divider />
+        <div class="mb-4">
+          <div class="flex flex-row mb-4">
+            <div class="max-w-[33.333%] basis-1/3 px-4">
+              <div
+                class="w-[50px] h-[50px] rounded-lg flex items-center justify-center bg-dashboard-primary mb-3"
+              >
+                <span class="material-symbols-outlined text-white"> airline_seat_flat </span>
+              </div>
+
+              <div>
+                <h6 class="pb-2 text-left">Births</h6>
+                <p class="text-dashboard-primary font-bold text-lg">53.07%</p>
+                <p class="text-dashboard-primary">201,434</p>
+              </div>
+            </div>
+
+            <div class="max-w-[33.333%] basis-1/3 px-4">
+              <div
+                class="w-[50px] h-[50px] rounded-lg flex items-center justify-center bg-dashboard-primary mb-3 ml-4"
+              >
+                <span class="material-symbols-outlined text-white"> airline_seat_individual_suite </span>
+              </div>
+
+              <div class="px-4">
+                <h6 class="pb-2 text-left">Deaths</h6>
+                <p class="text-red-600 font-bold text-lg">29.05%</p>
+                <p class="text-red-600">134,693</p>
+              </div>
+            </div>
+
+            <div class="max-w-[33.333%] basis-1/3 px-4">
+              <div
+                class="w-[50px] h-[50px] rounded-lg flex items-center justify-center bg-dashboard-primary mb-3 ml-4"
+              >
+                <span class="material-symbols-outlined text-white"> accessible </span>
+              </div>
+
+              <div class="max-w-[33.333%] basis-1/3 px-4">
+                <h6 class="pb-2 text-left">Accidents</h6>
+                <p class="text-orange-700 font-bold text-lg">18.43%</p>
+                <p class="text-orange-600">81,525</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row">
+            <div class="w-[53.07%]">
+              <ProgressBar
+                :value="100"
+                :showValue="false"
+                :pt="{
+                  value: { style: { background: '#007bff' } },
+                  root: { style: { 'border-width': '0', 'border-radius': '0' } }
+                }"
+              />
+            </div>
+            <div class="w-[29.05%]">
+              <ProgressBar
+                :value="100"
+                :showValue="false"
+                :pt="{
+                  value: { style: { background: 'red' } },
+                  root: { style: { 'border-width': '0', 'border-radius': '0' } }
+                }"
+              />
+            </div>
+            <div class="w-[18.43%]">
+              <ProgressBar
+                :value="100"
+                :showValue="false"
+                :pt="{
+                  value: { style: { background: 'orange' } },
+                  root: { style: { 'border-width': '0', 'border-radius': '0' } }
+                }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
       <div class="basis-1/2 max-w-[50%]">3Rd Row</div>
     </div>
     <div class="flex flex-row px-4 py-6">
@@ -259,7 +344,7 @@ const setChartOptions = () => {
 
 .material-symbols-outlined {
   font-variation-settings:
-    'FILL' 0,
+    'FILL' 1,
     'wght' 400,
     'GRAD' 0,
     'opsz' 20;
