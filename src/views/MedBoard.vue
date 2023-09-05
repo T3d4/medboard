@@ -6,7 +6,7 @@
       <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
           <div class="flex card relative rounded-lg">
-            <div class="text-white font-Lato font-bold text-lg pl-5 py-3">
+            <div class="text-white font-Lato font-bold text-base pl-4 py-3">
               <h6 class="pb-4">DOCTORS</h6>
               <p class="text-2xl">4567</p>
             </div>
@@ -27,7 +27,7 @@
       <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
           <div class="flex card relative rounded-lg">
-            <div class="text-white font-Lato font-bold text-lg pl-5 py-3">
+            <div class="text-white font-Lato font-bold text-base pl-4 py-3">
               <h6 class="pb-4">NURSES</h6>
               <p class="text-2xl">4567</p>
             </div>
@@ -48,7 +48,7 @@
       <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
           <div class="flex card relative rounded-lg">
-            <div class="text-white font-Lato font-bold text-lg pl-5 py-3">
+            <div class="text-white font-Lato font-bold text-base pl-4 py-3">
               <h6 class="pb-4">PATIENTS</h6>
               <p class="text-2xl">4567</p>
             </div>
@@ -69,7 +69,7 @@
       <div class="basis-1/4 max-w-[25%] px-3">
         <router-link to="">
           <div class="flex card relative rounded-lg">
-            <div class="text-white font-Lato font-bold text-lg pl-5 py-3">
+            <div class="text-white font-Lato font-bold text-base pl-4 py-3">
               <h6 class="pb-4">PHARMACISTS</h6>
               <p class="text-2xl">4567</p>
             </div>
@@ -124,7 +124,7 @@
                 type="line"
                 :data="chartEarning"
                 :options="chartOptions"
-                class="h-[80px] w-[300px]"
+                class="h-[80px]"
               />
             </div>
           </div>
@@ -137,13 +137,16 @@
         </div>
       </div>
       <!-- Second Row / Third -->
-      <div class="basis-1/3 max-w-[33.333%] bg-white">
-        <div>
-          <div>
+      <div class="basis-1/3 max-w-[33.333%] bg-white my-2">
+        <div class="flex relative justify-center w-full">
+          <div class="relative flex justify-center">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg"
               alt="doctors"
             />
+          </div>
+          <div class="absolute flex-grow bottom-[-40px] flex justify-center">
+          <img src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg" alt="doctor" class="rounded-full ring-4 ring-sky-500 min-w-[40px] max-w-[33%] h-auto"/>
           </div>
         </div>
       </div>
