@@ -140,20 +140,21 @@
               alt="doctors"
             />
           </div>
-          <div class=" flex justify-center max-w-[50%] h-auto">
+          <div class="flex justify-center max-w-[50%] h-auto">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/dashboard/doctor-1.jpg"
               alt="doctor"
               class="rounded-full ring-4 ring-sky-500 mt-[-20%] h-auto max-w-[38%]"
             />
           </div>
-          
         </div>
-        <div class="pt-[70px] text-center ">
+        <div class="pt-[70px] text-center">
           <h2 class="text-2xl text-black font-semibold">Anny Farisha</h2>
           <p class="font-normal pt-2 text-base text-black">Doctor</p>
-          <p class="pt-5 font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
-          </div>
+          <p class="pt-5 font-light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc
+          </p>
+        </div>
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
