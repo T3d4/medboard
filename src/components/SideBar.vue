@@ -1,5 +1,5 @@
 <template>
-  <div class="justify-center bg-dashboard-primary overflow-auto text-white text-center sidebar ">
+  <div class="justify-center bg-dashboard-primary overflow-auto text-white text-center sidebar">
     <div>
       <div class="flex font-Lato font-bold items-center justify-center">
         <router-link to="" class="h-[70%] w-[70%] cursor-pointer my-4">

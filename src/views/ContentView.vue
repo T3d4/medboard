@@ -1,9 +1,9 @@
 <template>
   <div>
-  <MedBoard />
-  <GenereateReport />
-  <PrescriptionModal />
-  <AppointmentModal />
+    <MedBoard />
+    <GenereateReport />
+    <PrescriptionModal />
+    <AppointmentModal />
   </div>
 </template>
 

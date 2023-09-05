@@ -1,13 +1,16 @@
 <template>
   <div class="flex">
     <div class="fixed">
-    <SideBar
-      :class="{ 'navbar-open': sideBar.state, 'navbar-closed': !sideBar.state }"
-      class="navbar h-screen"
-    />
+      <SideBar
+        :class="{ 'navbar-open': sideBar.state, 'navbar-closed': !sideBar.state }"
+        class="navbar h-screen"
+      />
     </div>
-    <div class="w-screen h-full overflow-y-auto header-bar" :class="{'header-collapse': sideBar.state, 'header-expand': !sideBar.state}">
-      <HeaderBar/>
+    <div
+      class="w-screen h-full overflow-y-auto header-bar"
+      :class="{ 'header-collapse': sideBar.state, 'header-expand': !sideBar.state }"
+    >
+      <HeaderBar />
       <div>
         <ContentView />
       </div>
@@ -28,7 +31,7 @@ import { sideBar } from '../showModal'
 }
 
 .navbar-open {
-  width: 250px;  /* Adjust the width to your desired value */
+  width: 250px; /* Adjust the width to your desired value */
 }
 
 .navbar-closed {
@@ -36,7 +39,7 @@ import { sideBar } from '../showModal'
   padding: 0; /* Reset padding for closed state */
 }
 
-.header-bar{
+.header-bar {
   transition: margin-left 0.3s ease-in-out;
 }
 .header-collapse {
