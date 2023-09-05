@@ -107,7 +107,7 @@
           </div>
           <div class="mb-6 bg-white rounded-md">
             <div class="text-lg font-bold pl-5">
-              <h6 class="py-4">PATIENTS</h6>
+              <h6 class="py-4">NEW PATIENTS</h6>
               <p class="text-3xl pb-2">650</p>
             </div>
             <div>
@@ -137,7 +137,7 @@
           <div class="relative">
             <img
               src="https://slidesigma.nyc/templatemonster/angular/medboard/assets/img/portfolio/gallery-4-760x260.jpg"
-              alt="doctors" 
+              alt="doctors"
             />
             <div class="absolute top-0 left-0 w-full h-full bg-dashboard-primary/[0.5]"></div>
           </div>
@@ -163,23 +163,24 @@
           </Button>
         </div>
         <div class="w-[95%] mx-auto">
-        <Divider/>
+          <Divider />
         </div>
         <div class="flex flex-row items-center">
-        <div class="text-center pb-8 mx-auto">
-        <h6 class="font-bold text-2xl">5790</h6>
-        <p class="font-normal text-sm">Operations</p>
+          <div class="text-center pb-8 mx-auto">
+            <h6 class="font-bold text-2xl">5790</h6>
+            <p class="font-normal text-sm">Operations</p>
+          </div>
+          <div class="h-[80px] pb-4">
+            <Divider layout="vertical" />
+          </div>
+          <div class="mx-auto text-center pb-8">
+            <h6 class="font-bold text-2xl">4.5</h6>
+            <p class="font-normal text-sm">Medical Rating</p>
+          </div>
         </div>
-        <div class="h-[80px] pb-4">
-        <Divider layout="vertical"/>
-        </div>
-        <div class="mx-auto text-center pb-8">
-        <h6 class="font-bold text-2xl">4.5</h6>
-        <p class="font-normal text-sm">Medical Rating</p>
-        </div>
-      </div>
       </div>
     </div>
+    <!--  -->
     <div class="flex flex-row px-4 py-6">
       <div class="basis-1/2 max-w-[50%]">3Rd Row</div>
       <div class="basis-1/2 max-w-[50%]">3Rd Row</div>
@@ -248,12 +249,12 @@ const setChartOptions = () => {
 }
 
 .color-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 158, 251, 0.5); /* Adjust the color and opacity here */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 158, 251, 0.5); /* Adjust the color and opacity here */
 }
 
 .material-symbols-outlined {
