@@ -15,10 +15,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import {
-  faStethoscope,
-  faBriefcaseMedical,
-  faUserPlus,
-  faWheelchair
+    faStethoscope,
+    faBriefcaseMedical,
+    faUserPlus,
+    faWheelchair,
+    faChevronLeft,
+    faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
 
 import PrimeVue from 'primevue/config'
@@ -34,8 +36,9 @@ import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
 import Chart from 'primevue/chart'
 import ProgressBar from 'primevue/progressbar'
+import Carousel from 'primevue/carousel';
 
-library.add(faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair)
+library.add(faStethoscope, faBriefcaseMedical, faUserPlus, faWheelchair, faChevronLeft, faChevronRight)
 
 const app = createApp(App)
 
@@ -53,3 +56,4 @@ app.component('Button', Button)
 app.component('Checkbox', Checkbox)
 app.component('Chart', Chart)
 app.component('ProgressBar', ProgressBar)
+app.component('Carousel', Carousel)
