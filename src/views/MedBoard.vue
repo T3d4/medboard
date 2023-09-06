@@ -111,7 +111,7 @@
               <p class="text-3xl pb-2">650</p>
             </div>
             <div>
-              <Chart type="line" :data="chartPatient" :options="chartOptions" class="h-[3.3rem]"/>
+              <Chart type="line" :data="chartPatient" :options="chartOptions" class="h-[3.3rem]" />
             </div>
           </div>
           <div class="bg-white rounded-md">
@@ -119,20 +119,20 @@
               <h6 class="py-4">HOSPITAL EARNING</h6>
               <p class="text-3xl pb-2">3,473</p>
             </div>
-            <div class="h-fit">
+            <div>
               <Chart type="line" :data="chartEarning" :options="chartOptions" class="h-[3.3rem]" />
             </div>
           </div>
         </div>
       </div>
       <!-- Second Row / Second -->
-      <div class="basis-1/3 max-w-[33.333%] py-2 px-6 flex ">
+      <div class="basis-1/3 max-w-[33.333%] py-2 px-6 flex">
         <div class="bg-slate-300 flex justify-center w-full">
-          <Calendar v-model="date" inline showWeek class="w-full"/>
+          <Calendar v-model="date" inline showWeek class="w-full" />
         </div>
       </div>
       <!-- Second Row / Third -->
-      <div class="basis-1/3 max-w-[33.333%] bg-white my-2 w-full rounded-md ">
+      <div class="basis-1/3 max-w-[33.333%] bg-white my-2 w-full rounded-md">
         <div class="flex flex-col items-center justify-center">
           <div class="relative flex h-[180px] w-auto">
             <img
@@ -166,11 +166,11 @@
           <Divider />
         </div>
         <div class="flex flex-row items-center pb-4">
-          <div class="text-center  mx-auto">
+          <div class="text-center mx-auto">
             <h6 class="font-bold text-2xl">5790</h6>
             <p class="font-normal text-sm">Operations</p>
           </div>
-          <div class=" h-[60px] pt-1">
+          <div class="h-[60px] pt-1">
             <Divider layout="vertical" />
           </div>
           <div class="mx-auto text-center">
@@ -182,8 +182,8 @@
     </div>
     <!-- Third Row / First -->
     <div class="flex">
-      <div class="basis-1/2 max-w-[50%] px-4 py-2 ">
-        <div class="bg-white pt-5 px-4 py-2">
+      <div class="basis-1/2 max-w-[50%] px-4 py-2">
+        <div class="bg-white pt-5 px-4 py-4">
           <div>
             <h3 class="text-black font-bold text-lg">HOSPITAL BIRTH & DEATH ANALYTICS</h3>
           </div>
@@ -198,7 +198,7 @@
                   <span class="material-symbols-outlined text-white"> airline_seat_flat </span>
                 </div>
 
-                <div>
+                <div class="pb-2">
                   <h6 class="pb-2 text-left">Births</h6>
                   <p class="text-dashboard-primary font-bold text-lg">53.07%</p>
                   <p class="text-dashboard-primary">201,434</p>
@@ -216,8 +216,8 @@
 
                 <div class="px-4">
                   <h6 class="pb-2 text-left">Deaths</h6>
-                  <p class="text-red-600 font-bold text-lg">29.05%</p>
-                  <p class="text-red-600">134,693</p>
+                  <p class="text-red-700 font-bold text-lg">29.05%</p>
+                  <p class="text-red-700">134,693</p>
                 </div>
               </div>
               <!-- Accidents Row -->
@@ -230,7 +230,7 @@
 
                 <div class="max-w-[33.333%] basis-1/3 px-4">
                   <h6 class="pb-2 text-left">Accidents</h6>
-                  <p class="text-orange-700 font-bold text-lg">18.43%</p>
+                  <p class="text-orange-600 font-bold text-lg">18.43%</p>
                   <p class="text-orange-600">81,525</p>
                 </div>
               </div>
@@ -280,43 +280,93 @@
       <!-- Third Row / Second -->
       <div class="basis-1/2 max-w-[50%] px-4 py-2">
         <div class="py-2 px-4 pt-5 bg-white">
-        <div class="flex justify-between items-center">
-          <div class="text-black font-bold text-lg">
-            <h6>HOSPITAL STAFF</h6>
-          </div>
-          <div class="float-right">
-            <Button label="left" style="border-color: black; background-color: white; border-width: 2px; padding: 5px;" class="flex justify-center w-[25px] h-[20px] ">
-              <span class="material-symbols-outlined text-black"> chevron_left </span>
-            </Button>
+          <div class="flex justify-between items-center">
+            <div class="text-black font-bold text-lg">
+              <h6>HOSPITAL STAFF</h6>
+            </div>
+            <div class="float-right">
+              <Button
+                label="left"
+                style="
+                  border-color: black;
+                  background-color: white;
+                  border-width: 2px;
+                  padding: 5px;
+                "
+                class="flex justify-center w-[25px] h-[20px]"
+              >
+                <span class="material-symbols-outlined text-black"> chevron_left </span>
+              </Button>
 
-            <Button label="left" style="border-color: black; background-color: white; border-width: 2px; padding: 5px;" class="flex justify-center w-[25px] h-[20px] ml-3">
-              <span class="material-symbols-outlined text-black"> chevron_right </span>
-            </Button>
+              <Button
+                label="left"
+                style="
+                  border-color: black;
+                  background-color: white;
+                  border-width: 2px;
+                  padding: 5px;
+                "
+                class="flex justify-center w-[25px] h-[20px] ml-3"
+              >
+                <span class="material-symbols-outlined text-black"> chevron_right </span>
+              </Button>
+            </div>
           </div>
-        </div>
-        <Divider/>
+          <Divider />
         </div>
         <div class="bg-white">
-        <Carousel :value="doctor" :numVisible="4" :numScroll="1" circular autoplayInterval="3500" :pt="{indicator:{style:{'margin-bottom': '0', 'padding-bottom':'4px'}},indicators:{style:{'margin-bottom': '0px', 'padding-bottom':'4px'}}}">
-        <template #item="slotProps">
-        <div>
-        <router-link to="">
-        <div>
-        <img :src="slotProps.data.image" :alt="slotProps.data.name" class="w-[47%] mx-auto rounded-full"/>
-        <div>
-        <h5 class="text-center my-2 text-xl font-medium">{{ slotProps.data.name }}</h5>
-        <p class="text-center font-thin text-[14px]">{{ slotProps.data.role }}</p>
-        </div>
-        </div>
-      </router-link>
-        </div>
-        </template>
-        </Carousel>
+          <Carousel
+            :value="doctor"
+            :numVisible="4"
+            :numScroll="1"
+            circular
+            autoplayInterval="3500"
+            :pt="{
+              indicator: { style: { 'margin-bottom': '0', 'padding-bottom': '4px' } },
+              indicators: { style: { 'margin-bottom': '0px', 'padding-bottom': '4px' } }
+            }"
+          >
+            <template #item="slotProps">
+              <div>
+                <router-link to="">
+                  <div>
+                    <img
+                      :src="slotProps.data.image"
+                      :alt="slotProps.data.name"
+                      class="w-[47%] mx-auto rounded-full"
+                    />
+                    <div>
+                      <h5 class="text-center my-2 text-xl font-medium">
+                        {{ slotProps.data.name }}
+                      </h5>
+                      <p class="text-center font-thin text-[14px]">{{ slotProps.data.role }}</p>
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+            </template>
+          </Carousel>
         </div>
       </div>
     </div>
-    <div class="flex flex-row px-4 py-6">
-      <div class="basis-1/2 max-w-[50%]">4th Row</div>
+    <div class="flex flex-row px-2 py-2 rounded-md">
+      <div class="basis-1/2 px-2">
+        <div class="bg-white py-4 px-4">
+          <div class="text-lg text-black font-bold">
+            <h6>PATIENT TOTAL</h6>
+          </div>
+          <Divider />
+          <div>
+            <Chart
+              type="line"
+              :data="chartPatientTotal"
+              :options="chartPatientOptions"
+              class="h-[500px]"
+              style="font-weight: 800"
+            />
+          </div>
+        </div>
+      </div>
       <div class="basis-1/2 max-w-[50%]">4th Row</div>
     </div>
     <div class="flex flex-row px-4 py-6">
@@ -338,6 +388,7 @@
 import { ref, onMounted } from 'vue'
 import { setAppointment, setPatient, setEarning } from '../data/chartData'
 import doctors from '../data/doctors.json'
+import { setPatientTotalChart } from '../data/patientChartData'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -345,6 +396,8 @@ onMounted(() => {
   chartEarning.value = setEarning()
   chartOptions.value = setChartOptions()
   doctor.value = doctors
+  chartPatientTotal.value = setPatientTotalChart()
+  chartPatientOptions.value = setChartPatientOptions()
 })
 
 const doctor = ref()
@@ -353,6 +406,46 @@ const chartAppointment = ref()
 const chartPatient = ref()
 const chartEarning = ref()
 const chartOptions = ref()
+const chartPatientTotal = ref()
+const chartPatientOptions = ref()
+
+const setChartPatientOptions = () => {
+  return {
+    maintainAspectRatio: false,
+    aspectRatio: 0.7,
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: true,
+        ticks: {
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        }
+      },
+      y: {
+        max: 3800,
+        display: true,
+        grid: {
+          display: false
+        },
+        beginAtZero: true,
+        ticks: {
+          stepSize: 200,
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        }
+      }
+    }
+  }
+}
 
 const setChartOptions = () => {
   return {
