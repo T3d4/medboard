@@ -300,13 +300,15 @@
         <Carousel :value="doctor" :numVisible="4" :numScroll="1" circular autoplayInterval="3500" :pt="{indicator:{style:{'margin-bottom': '0', 'padding-bottom':'4px'}},indicators:{style:{'margin-bottom': '0px', 'padding-bottom':'4px'}}}">
         <template #item="slotProps">
         <div>
-        <div class="">
+        <router-link to="">
+        <div>
         <img :src="slotProps.data.image" :alt="slotProps.data.name" class="w-[47%] mx-auto rounded-full"/>
         <div>
         <h5 class="text-center my-2 text-xl font-medium">{{ slotProps.data.name }}</h5>
         <p class="text-center font-thin text-[14px]">{{ slotProps.data.role }}</p>
         </div>
         </div>
+      </router-link>
         </div>
         </template>
         </Carousel>
