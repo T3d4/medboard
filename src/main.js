@@ -20,7 +20,8 @@ import {
   faUserPlus,
   faWheelchair,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faCheck
 } from '@fortawesome/free-solid-svg-icons'
 
 import PrimeVue from 'primevue/config'
@@ -46,7 +47,8 @@ library.add(
   faUserPlus,
   faWheelchair,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faCheck
 )
 
 const app = createApp(App)

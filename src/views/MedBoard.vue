@@ -419,7 +419,7 @@
                 header="Date"
                 sortable
                 :pt="{
-                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } },
+                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } }
                 }"
               ></Column>
               <Column
@@ -449,7 +449,32 @@
           </div>
         </div>
       </div>
-      <div class="basis-2/5 max-w-[40%]"></div>
+      <div class="basis-2/5 max-w-[40%]">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>DOCTORS LIST</h6>
+          </div>
+          <Divider />
+          <div :key="doctor.id" v-for="doctor in doctorList">
+          <div class="flex flex-row justify-between items-center">
+            <div class="flex flex-row">
+              <img :src="doctor.image" class="rounded-full h-auto w-12"/>
+              <div class="text-left pl-6">
+                <h6 class="text-lg">{{ doctor.name }}</h6>
+                <p class="text-xs">{{ doctor.qualifications }}</p>
+              </div>
+            </div>
+            <div @click="doctor.added = !doctor.added">
+              <Button :severity="doctor.added ? 'success' : 'info' " aria-label="Search" >
+                <font-awesome-icon :icon="doctor.added ? 'check' : 'user-plus' " style="color: #ffffff" class="mx-auto" />
+              </Button>
+            </div>
+          </div>
+          <Divider style="margin-top: 18px; margin-bottom: 18px;"/>
+        </div>
+          
+        </div>
+      </div>
     </div>
     <div class="flex flex-row px-4 py-6">
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
@@ -470,6 +495,7 @@ import { setPatientTotalChart } from '../data/patientChartData'
 import { setPatientInChart } from '../data/patientInChartData'
 import upcomingAppointData from '../data/upcomingAppointData.json'
 import ToggleButton from '../components/ToggleButton.vue'
+import doctorsList from '../data/doctorsList.json'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -484,6 +510,7 @@ onMounted(() => {
   appointments.value = upcomingAppointData
 })
 
+const doctorList = ref(doctorsList)
 const doctor = ref()
 const date = ref(Date())
 const chartAppointment = ref()
@@ -614,6 +641,6 @@ const setChartOptions = () => {
 }
 
 .p-datatable .p-sortable-column .p-sortable-column-icon {
-    color: #e1eaf3 !important;
+  color: #e1eaf3 !important;
 }
 </style>
