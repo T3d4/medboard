@@ -1,7 +1,6 @@
 const patientTotal = [200, 1200, 980, 1260, 1550, 1440, 2790, 3200, 3600]
 
 export const setPatientTotalChart = () => {
-  const documentStyle = getComputedStyle(document.documentElement)
 
   return {
     labels: [
@@ -19,9 +18,9 @@ export const setPatientTotalChart = () => {
       {
         data: patientTotal,
         fill: true,
-        borderColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)'),
+        borderColor: 'rgba(0, 113, 179, 0.64)',
         tension: 0.5,
-        backgroundColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)')
+        backgroundColor: 'rgba(0, 145, 230, 0.55)'
       }
     ]
   }

@@ -23,16 +23,13 @@ const setAppointment = () => {
             {
                 data: appointment,
                 fill: true,
-                borderColor: '#007bff',
-                tension: 0,
-                backgroundColor: '#007bff'
+
             }
         ]
     }
 }
 
 const setPatient = () => {
-    const documentStyle = getComputedStyle(document.documentElement)
 
     return {
         labels: [
@@ -53,16 +50,12 @@ const setPatient = () => {
             {
                 data: patients,
                 fill: true,
-                borderColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)'),
-                tension: 0,
-                backgroundColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)')
             }
         ]
     }
 }
 
 const setEarning = () => {
-    const documentStyle = getComputedStyle(document.documentElement)
 
     return {
         labels: [
@@ -83,9 +76,6 @@ const setEarning = () => {
             {
                 data: earnings,
                 fill: true,
-                borderColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)'),
-                tension: 0,
-                backgroundColor: documentStyle.getPropertyValue('rgba(5, 121, 189, 0.84)')
             }
         ]
     }
