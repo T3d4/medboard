@@ -456,23 +456,26 @@
           </div>
           <Divider />
           <div :key="doctor.id" v-for="doctor in doctorList">
-          <div class="flex flex-row justify-between items-center">
-            <div class="flex flex-row">
-              <img :src="doctor.image" class="rounded-full h-auto w-12"/>
-              <div class="text-left pl-6">
-                <h6 class="text-lg">{{ doctor.name }}</h6>
-                <p class="text-xs">{{ doctor.qualifications }}</p>
+            <div class="flex flex-row justify-between items-center">
+              <div class="flex flex-row">
+                <img :src="doctor.image" class="rounded-full h-auto w-12" />
+                <div class="text-left pl-6">
+                  <h6 class="text-lg">{{ doctor.name }}</h6>
+                  <p class="text-xs">{{ doctor.qualifications }}</p>
+                </div>
+              </div>
+              <div @click="doctor.added = !doctor.added">
+                <Button :severity="doctor.added ? 'success' : 'info'" aria-label="Search">
+                  <font-awesome-icon
+                    :icon="doctor.added ? 'check' : 'user-plus'"
+                    style="color: #ffffff"
+                    class="mx-auto"
+                  />
+                </Button>
               </div>
             </div>
-            <div @click="doctor.added = !doctor.added">
-              <Button :severity="doctor.added ? 'success' : 'info' " aria-label="Search" >
-                <font-awesome-icon :icon="doctor.added ? 'check' : 'user-plus' " style="color: #ffffff" class="mx-auto" />
-              </Button>
-            </div>
+            <Divider style="margin-top: 18px; margin-bottom: 18px" />
           </div>
-          <Divider style="margin-top: 18px; margin-bottom: 18px;"/>
-        </div>
-          
         </div>
       </div>
     </div>
@@ -481,8 +484,54 @@
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
     </div>
     <div class="flex flex-row px-4 py-6">
-      <div class="basis-3/4 max-w-[75%]">7th Row</div>
-      <div class="basis-1/4 max-w-[25%]">7th Row</div>
+      <div class="basis-3/5 max-w-[60%]">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>NEW PATIENTS</h6>
+          </div>
+          <Divider />
+          <div>
+            <DataTable removableSort table-style="min-width: 50rem" :value="newPatientData">
+              <Column
+                header="Patient"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              >
+                <template #body="{ data }">
+                  <div class="flex items-center">
+                    <img
+                      :src="data.image"
+                      :alt="data.patientName"
+                      class="rounded-full h-auto w-10"
+                    />
+                    <span class="pl-4">{{ data.name }}</span>
+                  </div>
+                </template>
+              </Column>
+              <Column
+                field="email"
+                header="Email"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              >
+              </Column>
+              <Column
+                field="contact"
+                header="Contact"
+                :pt="{
+                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } }
+                }"
+              >
+              </Column>
+              <Column
+                field="disease"
+                header="Disease"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              >
+              </Column>
+            </DataTable>
+          </div>
+        </div>
+      </div>
+      <div class="basis-2/5 max-w-[40%]">7th Row</div>
     </div>
   </div>
 </template>
@@ -496,6 +545,7 @@ import { setPatientInChart } from '../data/patientInChartData'
 import upcomingAppointData from '../data/upcomingAppointData.json'
 import ToggleButton from '../components/ToggleButton.vue'
 import doctorsList from '../data/doctorsList.json'
+import newPatient from '../data/newPatient.json'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -510,6 +560,7 @@ onMounted(() => {
   appointments.value = upcomingAppointData
 })
 
+const newPatientData = ref(newPatient)
 const doctorList = ref(doctorsList)
 const doctor = ref()
 const date = ref(Date())
