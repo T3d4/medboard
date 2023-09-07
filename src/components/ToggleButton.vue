@@ -1,23 +1,22 @@
 <template>
-    <div>
+  <div>
     <label class="switch" :for="isID">
-    <input type="checkbox" :id="isID" name="status" v-model="isChecked"/>
-    <span class="slider round"></span>
+      <input type="checkbox" :id="isID" name="status" v-model="isChecked" />
+      <span class="slider round"></span>
     </label>
-    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref} from 'vue';
+import { ref } from 'vue'
 
 const isChecked = ref(props.checked)
 const isID = ref(props.id)
 
 const props = defineProps({
-    checked: Boolean,
-    id: Number
+  checked: Boolean,
+  id: Number
 })
-
 </script>
 
 <style scoped>
@@ -44,28 +43,28 @@ const props = defineProps({
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 18px;
   width: 18px;
   left: 5px;
   bottom: 5px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #07be6e;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #07be6e;
 }
 
 input:checked + .slider:before {

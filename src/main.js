@@ -37,8 +37,8 @@ import Checkbox from 'primevue/checkbox'
 import Chart from 'primevue/chart'
 import ProgressBar from 'primevue/progressbar'
 import Carousel from 'primevue/carousel'
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
+import DataTable from 'primevue/datatable'
+import Column from 'primevue/column'
 
 library.add(
   faStethoscope,

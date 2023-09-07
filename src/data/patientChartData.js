@@ -1,7 +1,6 @@
 const patientTotal = [200, 1200, 980, 1260, 1550, 1440, 2790, 3200, 3600]
 
 export const setPatientTotalChart = () => {
-
   return {
     labels: [
       'Jan-11',

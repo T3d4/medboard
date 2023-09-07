@@ -393,29 +393,61 @@
           </div>
           <Divider />
           <div>
-          <DataTable removableSort table-style="min-width: 50rem" :value="appointments">
-          <Column header="Patient">
-          <template #body="{data}">
-          <div class="flex items-center">
-          <img :src="data.image" :alt="data.patientName" class="rounded-full h-auto w-10"/>
-          <span class="pl-4">{{ data.patientName }}</span>
+            <DataTable removableSort table-style="min-width: 50rem" :value="appointments">
+              <Column
+                header="Patient"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              >
+                <template #body="{ data }">
+                  <div class="flex items-center">
+                    <img
+                      :src="data.image"
+                      :alt="data.patientName"
+                      class="rounded-full h-auto w-10"
+                    />
+                    <span class="pl-4">{{ data.patientName }}</span>
+                  </div>
+                </template>
+              </Column>
+              <Column
+                field="doctorName"
+                header="Doctor"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              ></Column>
+              <Column
+                field="date"
+                header="Date"
+                sortable
+                :pt="{
+                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } },
+                }"
+              ></Column>
+              <Column
+                field="timing"
+                header="Timing"
+                sortable
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              ></Column>
+              <Column
+                field="contact"
+                header="Contact"
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              ></Column>
+              <Column
+                header="Status"
+                field="status"
+                sortable
+                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+              >
+                <template #body="{ data }">
+                  <div>
+                    <ToggleButton :checked="data.status" :id="data.id" :key="data.id" />
+                  </div>
+                </template>
+              </Column>
+            </DataTable>
           </div>
-          </template>
-          </Column>
-          <Column field="doctorName" header="Doctor"></Column>
-          <Column field="date" header="Date" sortable></Column>
-          <Column field="timing" header="Timing" sortable></Column>
-          <Column field="contact" header="Contact"></Column>
-          <Column header="Status" field="status" sortable>
-          <template #body="{data}">
-          <div>
-            <ToggleButton :checked="data.status" :id="data.id" :key="data.id"/>
-          </div>
-          </template>
-          </Column>
-          </DataTable>
-          </div>
-          </div>
+        </div>
       </div>
       <div class="basis-2/5 max-w-[40%]"></div>
     </div>
@@ -435,7 +467,7 @@ import { ref, onMounted } from 'vue'
 import { setAppointment, setPatient, setEarning } from '../data/chartData'
 import doctors from '../data/doctors.json'
 import { setPatientTotalChart } from '../data/patientChartData'
-import {setPatientInChart} from '../data/patientInChartData'
+import { setPatientInChart } from '../data/patientInChartData'
 import upcomingAppointData from '../data/upcomingAppointData.json'
 import ToggleButton from '../components/ToggleButton.vue'
 
@@ -472,7 +504,7 @@ const setChartPatientOptions = () => {
     aspectRatio: 0.7,
     plugins: {
       legend: {
-        display: false,
+        display: false
       }
     },
     scales: {
@@ -512,12 +544,12 @@ const setChartPatientInOptions = () => {
     plugins: {
       legend: {
         display: true,
-        labels:{         
+        labels: {
           font: {
             size: 14,
             weight: 'bold'
           }
-          },
+        }
       }
     },
     scales: {
@@ -566,10 +598,9 @@ const setChartOptions = () => {
     }
   }
 }
-
 </script>
 
-<style scoped>
+<style>
 .card {
   background-image: linear-gradient(90deg, rgba(0, 158, 251, 0.8), #fff);
 }
@@ -580,5 +611,9 @@ const setChartOptions = () => {
     'wght' 400,
     'GRAD' 0,
     'opsz' 20;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+    color: #e1eaf3 !important;
 }
 </style>
