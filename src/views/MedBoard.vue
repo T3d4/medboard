@@ -411,7 +411,7 @@
           </div>
           </div>
       </div>
-      <div class="basis-2/5 max-w-[40%]">5th Row</div>
+      <div class="basis-2/5 max-w-[40%]"><ToggleButton/></div>
     </div>
     <div class="flex flex-row px-4 py-6">
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
@@ -431,6 +431,7 @@ import doctors from '../data/doctors.json'
 import { setPatientTotalChart } from '../data/patientChartData'
 import {setPatientInChart} from '../data/patientInChartData'
 import upcomingAppointData from '../data/upcomingAppointData.json'
+import ToggleButton from '../components/ToggleButton.vue'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
