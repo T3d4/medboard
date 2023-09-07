@@ -406,12 +406,18 @@
           <Column field="date" header="Date" sortable></Column>
           <Column field="timing" header="Timing" sortable></Column>
           <Column field="contact" header="Contact"></Column>
-          <Column field="status" header="Status" sortable></Column>
+          <Column header="Status" field="status" sortable>
+          <template #body="{data}">
+          <div>
+            <ToggleButton :checked="data.status" :id="data.id" :key="data.id"/>
+          </div>
+          </template>
+          </Column>
           </DataTable>
           </div>
           </div>
       </div>
-      <div class="basis-2/5 max-w-[40%]"><ToggleButton/></div>
+      <div class="basis-2/5 max-w-[40%]"></div>
     </div>
     <div class="flex flex-row px-4 py-6">
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
@@ -560,6 +566,7 @@ const setChartOptions = () => {
     }
   }
 }
+
 </script>
 
 <style scoped>

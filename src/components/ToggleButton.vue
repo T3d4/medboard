@@ -1,24 +1,31 @@
 <template>
     <div>
-    <label class="switch" for="status">
-    <input type="checkbox" id="status" v-model="isChecked"/>
+    <label class="switch" :for="isID">
+    <input type="checkbox" :id="isID" name="status" v-model="isChecked"/>
     <span class="slider round"></span>
     </label>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref} from 'vue';
 
-const isChecked = ref(Boolean)
+const isChecked = ref(props.checked)
+const isID = ref(props.id)
+
+const props = defineProps({
+    checked: Boolean,
+    id: Number
+})
+
 </script>
 
 <style scoped>
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 55px;
+  height: 28px;
 }
 
 /* Hide default HTML checkbox */
@@ -44,10 +51,10 @@ const isChecked = ref(Boolean)
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 18px;
+  width: 18px;
+  left: 5px;
+  bottom: 5px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
