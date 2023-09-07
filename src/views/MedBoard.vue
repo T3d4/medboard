@@ -320,7 +320,7 @@
             :numVisible="4"
             :numScroll="1"
             circular
-            autoplayInterval="3500"
+            :autoplayInterval="3500"
             :pt="{
               indicator: { style: { 'margin-bottom': '0', 'padding-bottom': '4px' } },
               indicators: { style: { 'margin-bottom': '0px', 'padding-bottom': '4px' } }
@@ -349,9 +349,9 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row px-2 py-2 rounded-md">
-      <div class="basis-1/2 px-2">
-        <div class="bg-white py-4 px-4">
+    <div class="flex flex-row px-2 py-2">
+      <div class="basis-1/2 max-w-[50%] px-2">
+        <div class="bg-white py-4 px-4 rounded-md">
           <div class="text-lg text-black font-bold">
             <h6>PATIENT TOTAL</h6>
           </div>
@@ -361,13 +361,29 @@
               type="line"
               :data="chartPatientTotal"
               :options="chartPatientOptions"
-              class="h-[500px]"
+              class="h-[400px]"
               style="font-weight: 800"
             />
           </div>
         </div>
       </div>
-      <div class="basis-1/2 max-w-[50%]">4th Row</div>
+      <div class="basis-1/2 max-w-[50%] px-2">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>PATIENT IN</h6>
+          </div>
+          <Divider />
+          <div>
+            <Chart
+              type="bar"
+              :data="chartPatientIn"
+              :options="chartPatientInOptions"
+              class="h-[400px]"
+              style="font-weight: 800"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flex flex-row px-4 py-6">
       <div class="basis-3/4 max-w-[75%]">5th Row</div>
@@ -389,15 +405,18 @@ import { ref, onMounted } from 'vue'
 import { setAppointment, setPatient, setEarning } from '../data/chartData'
 import doctors from '../data/doctors.json'
 import { setPatientTotalChart } from '../data/patientChartData'
+import {setPatientInChart} from '../data/patientInChartData'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
   chartPatient.value = setPatient()
   chartEarning.value = setEarning()
   chartOptions.value = setChartOptions()
-  doctor.value = doctors
   chartPatientTotal.value = setPatientTotalChart()
   chartPatientOptions.value = setChartPatientOptions()
+  chartPatientIn.value = setPatientInChart()
+  chartPatientInOptions.value = setChartPatientInOptions()
+  doctor.value = doctors
 })
 
 const doctor = ref()
@@ -408,6 +427,10 @@ const chartEarning = ref()
 const chartOptions = ref()
 const chartPatientTotal = ref()
 const chartPatientOptions = ref()
+const chartPatientInOptions = ref()
+const chartPatientIn = ref()
+
+// Patient Total
 
 const setChartPatientOptions = () => {
   return {
@@ -415,7 +438,7 @@ const setChartPatientOptions = () => {
     aspectRatio: 0.7,
     plugins: {
       legend: {
-        display: false
+        display: false,
       }
     },
     scales: {
@@ -429,7 +452,6 @@ const setChartPatientOptions = () => {
         }
       },
       y: {
-        max: 3800,
         display: true,
         grid: {
           display: false
@@ -447,6 +469,49 @@ const setChartPatientOptions = () => {
   }
 }
 
+// PATIENT IN BAR CHART
+
+const setChartPatientInOptions = () => {
+  return {
+    maintainAspectRatio: false,
+    aspectRatio: 0.7,
+    plugins: {
+      legend: {
+        display: true,
+        labels:{         
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+          },
+      }
+    },
+    scales: {
+      x: {
+        display: true,
+        ticks: {
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        }
+      },
+      y: {
+        display: true,
+        beginAtZero: true,
+        ticks: {
+          stepSize: 500,
+          font: {
+            size: 14,
+            weight: 'bold'
+          }
+        }
+      }
+    }
+  }
+}
+
+// Appointments - New Patients - Hospital Earning Chart
 const setChartOptions = () => {
   return {
     maintainAspectRatio: false,
@@ -472,15 +537,6 @@ const setChartOptions = () => {
 <style scoped>
 .card {
   background-image: linear-gradient(90deg, rgba(0, 158, 251, 0.8), #fff);
-}
-
-.color-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 158, 251, 0.5); /* Adjust the color and opacity here */
 }
 
 .material-symbols-outlined {
