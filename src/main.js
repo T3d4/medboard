@@ -37,6 +37,8 @@ import Checkbox from 'primevue/checkbox'
 import Chart from 'primevue/chart'
 import ProgressBar from 'primevue/progressbar'
 import Carousel from 'primevue/carousel'
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 
 library.add(
   faStethoscope,
@@ -52,6 +54,8 @@ const app = createApp(App)
 app.use(PrimeVue)
 app.use(router)
 
+app.component('Column', Column)
+app.component('DataTable', DataTable)
 app.component('font-awesome-icon', FontAwesomeIcon).mount('#app')
 app.component('Menu', Menu)
 app.component('Chip', Chip)

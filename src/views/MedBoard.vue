@@ -386,8 +386,32 @@
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
-      <div class="basis-3/4 max-w-[75%]">5th Row</div>
-      <div class="basis-1/4 max-w-[25%]">5th Row</div>
+      <div class="basis-3/5 max-w-[60%] pr-6">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>UPCOMING APPOINTMENTS</h6>
+          </div>
+          <Divider />
+          <div>
+          <DataTable removableSort table-style="min-width: 50rem" :value="appointments">
+          <Column header="Patient">
+          <template #body="{data}">
+          <div class="flex items-center">
+          <img :src="data.image" :alt="data.patientName" class="rounded-full h-auto w-10"/>
+          <span class="pl-4">{{ data.patientName }}</span>
+          </div>
+          </template>
+          </Column>
+          <Column field="doctorName" header="Doctor"></Column>
+          <Column field="date" header="Date" sortable></Column>
+          <Column field="timing" header="Timing" sortable></Column>
+          <Column field="contact" header="Contact"></Column>
+          <Column field="status" header="Status" sortable></Column>
+          </DataTable>
+          </div>
+          </div>
+      </div>
+      <div class="basis-2/5 max-w-[40%]">5th Row</div>
     </div>
     <div class="flex flex-row px-4 py-6">
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
@@ -406,6 +430,7 @@ import { setAppointment, setPatient, setEarning } from '../data/chartData'
 import doctors from '../data/doctors.json'
 import { setPatientTotalChart } from '../data/patientChartData'
 import {setPatientInChart} from '../data/patientInChartData'
+import upcomingAppointData from '../data/upcomingAppointData.json'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -417,6 +442,7 @@ onMounted(() => {
   chartPatientIn.value = setPatientInChart()
   chartPatientInOptions.value = setChartPatientInOptions()
   doctor.value = doctors
+  appointments.value = upcomingAppointData
 })
 
 const doctor = ref()
@@ -429,6 +455,7 @@ const chartPatientTotal = ref()
 const chartPatientOptions = ref()
 const chartPatientInOptions = ref()
 const chartPatientIn = ref()
+const appointments = ref()
 
 // Patient Total
 
