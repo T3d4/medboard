@@ -45,30 +45,50 @@
             <template #start>
               <ul>
                 <li>
-                  <div class="flex items-center justify-center text-center h-[40px] ml-2">
-                    <span>Notifications</span>
+                  <div
+                    class="flex items-center float-left justify-center text-center h-[40px] ml-2"
+                  >
+                    <span class="pr-2 text-slate-400 font-medium">Notifications</span>
                     <Chip
-                      class="pl-0 pr-3 ml-2 mx-auto flex items-center justify-content-center"
                       :pt="{
                         root: { style: { background: '#009efb' } }
                       }"
                     >
-                      <div class="text-white">
+                      <div
+                        class="text-white h-4 w-5 flex justify-center items-center text-xs font-bold"
+                      >
                         <span class="border-circle">4</span>
-                        <span class="ml-1 font-medium">New</span>
+                        <span class="pl-1">New</span>
                       </div>
                     </Chip>
                   </div>
                 </li>
-                <Divider :pt="{ root: { style: { 'margin-top': '0' } } }" />
-                <router-link to="">
-                  <li>
-                    <div class="flex flex-col w-full">
-                      <span>Hello World</span>
-                      <span>45mins</span>
-                    </div>
-                  </li>
-                </router-link>
+                <Divider :pt="{ root: { style: { 'margin-top': '0', 'margin-bottom': '0px' } } }" />
+                <div class="py-2 hover:bg-slate-200" :key="note.id" v-for="note in isNotification">
+                  <router-link to="" class="">
+                    <li>
+                      <div class="flex flex-col w-full px-2">
+                        <span>{{ note.label }}</span>
+                        <span class="text-xs text-slate-400 flex items-center">
+                          <span class="material-symbols-outlined text-sm pr-1"> schedule </span>
+                          {{ note.time }} mins ago</span
+                        >
+                      </div>
+                    </li>
+                  </router-link>
+                </div>
+                <Divider :pt="{ root: { style: { 'margin-top': '0', 'margin-bottom': '0px' } } }" />
+                <div
+                  class="pt-1 hover:text-dashboard-primary transition ease-in-out text-black duration-300"
+                >
+                  <router-link to="" class="">
+                    <li>
+                      <div class="flex mx-auto justify-center">
+                        <span>View all Notifications</span>
+                      </div>
+                    </li>
+                  </router-link>
+                </div>
               </ul>
             </template>
           </Menu>
@@ -106,10 +126,12 @@ import { ref } from 'vue'
 import BurgerButton from './BurgerButton.vue'
 import profileDropdown from '../data/profileDropdown.json'
 import { showModal } from '../showModal'
+import notificationData from '../data/notificationData.json'
 
 const profileMenu = ref(profileDropdown)
 const menu = ref()
 const notification = ref()
+const isNotification = ref(notificationData)
 
 const show = (event) => {
   menu.value.toggle(event)
@@ -148,5 +170,13 @@ const report = () => {
   border-radius: 50%;
   background-color: red;
   color: red;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
 }
 </style>
