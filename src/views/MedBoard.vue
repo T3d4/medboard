@@ -595,22 +595,22 @@
             <h6>LATEST REPORTS</h6>
           </div>
           <Divider />
-          <div :key="doctor.id" v-for="doctor in doctorList">
+          <div :key="report.id" v-for="report in reports">
             <div class="flex flex-row justify-between items-center">
               <div class="flex flex-row">
                 <div class="text-left pl-6">
-                  <h6 class="text-lg">{{ doctor.name }}</h6>
-                  <p class="text-xs">{{ doctor.qualifications }}</p>
+                  <h6 class="text-lg">{{ report.title }}</h6>
+                  <router-link to="">
+                    <p class="text-xs">View Report</p>
+                  </router-link>
                 </div>
               </div>
-              <div @click="doctor.added = !doctor.added">
-                <Button :severity="doctor.added ? 'success' : 'info'" aria-label="Search">
-                  <font-awesome-icon
-                    :icon="doctor.added ? 'check' : 'user-plus'"
-                    style="color: #ffffff"
-                    class="mx-auto"
-                  />
-                </Button>
+              <div>
+                <Button
+                  :severity="report.state ? 'success' : 'danger'"
+                  :label="report.state ? 'Download' : 'On hold'"
+                  class="max-h-8 w-[120px]"
+                />
               </div>
             </div>
             <Divider style="margin-top: 18px; margin-bottom: 18px" />
@@ -631,6 +631,7 @@ import upcomingAppointData from '../data/upcomingAppointData.json'
 import ToggleButton from '../components/ToggleButton.vue'
 import doctorsList from '../data/doctorsList.json'
 import newPatient from '../data/newPatient.json'
+import latestReports from '../data/latestReports.json'
 
 onMounted(() => {
   chartAppointment.value = setAppointment()
@@ -645,6 +646,7 @@ onMounted(() => {
   appointments.value = upcomingAppointData
 })
 
+const reports = ref(latestReports)
 const newPatientData = ref(newPatient)
 const doctorList = ref(doctorsList)
 const doctor = ref()
