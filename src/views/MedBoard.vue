@@ -339,7 +339,9 @@
                       <h5 class="text-center my-2 text-xl font-medium">
                         {{ slotProps.data.name }}
                       </h5>
-                      <p class="text-center font-thin text-[14px]">{{ slotProps.data.role }}</p>
+                      <p class="text-center font-thin text-[14px]">
+                        {{ slotProps.data.role }}
+                      </p>
                     </div>
                   </div>
                 </router-link>
@@ -396,7 +398,11 @@
             <DataTable removableSort table-style="min-width: 50rem" :value="appointments">
               <Column
                 header="Patient"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
+                }"
               >
                 <template #body="{ data }">
                   <div class="flex items-center">
@@ -412,32 +418,50 @@
               <Column
                 field="doctorName"
                 header="Doctor"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
+                }"
               ></Column>
               <Column
                 field="date"
                 header="Date"
                 sortable
                 :pt="{
-                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } }
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
                 }"
               ></Column>
               <Column
                 field="timing"
                 header="Timing"
                 sortable
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
+                }"
               ></Column>
               <Column
                 field="contact"
                 header="Contact"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
+                }"
               ></Column>
               <Column
                 header="Status"
                 field="status"
                 sortable
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: { 'background-color': '#009efb', color: 'white' }
+                  }
+                }"
               >
                 <template #body="{ data }">
                   <div>
@@ -483,8 +507,8 @@
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
       <div class="basis-1/2 max-w-[50%]">6th Row</div>
     </div>
-    <div class="flex flex-row px-4 py-6">
-      <div class="basis-3/5 max-w-[60%]">
+    <div class="flex flex-row px-4 py-6 h-full">
+      <div class="basis-3/5 max-w-[60%] pr-6">
         <div class="bg-white py-4 px-4 rounded-md">
           <div class="text-lg text-black font-bold">
             <h6>NEW PATIENTS</h6>
@@ -494,7 +518,16 @@
             <DataTable removableSort table-style="min-width: 50rem" :value="newPatientData">
               <Column
                 header="Patient"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
+                  }
+                }"
               >
                 <template #body="{ data }">
                   <div class="flex items-center">
@@ -510,28 +543,80 @@
               <Column
                 field="email"
                 header="Email"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
+                  }
+                }"
               >
               </Column>
               <Column
                 field="contact"
                 header="Contact"
                 :pt="{
-                  headerCell: { style: { 'background-color': '#009efb', color: 'white' } }
+                  headerCell: {
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '4px',
+                      'padding-bottom': '4px'
+                    }
+                  }
                 }"
               >
               </Column>
               <Column
                 field="disease"
                 header="Disease"
-                :pt="{ headerCell: { style: { 'background-color': '#009efb', color: 'white' } } }"
+                :pt="{
+                  headerCell: {
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
+                  }
+                }"
               >
               </Column>
             </DataTable>
           </div>
         </div>
       </div>
-      <div class="basis-2/5 max-w-[40%]">7th Row</div>
+      <div class="basis-2/5 max-w-[40%]">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>LATEST REPORTS</h6>
+          </div>
+          <Divider />
+          <div :key="doctor.id" v-for="doctor in doctorList">
+            <div class="flex flex-row justify-between items-center">
+              <div class="flex flex-row">
+                <div class="text-left pl-6">
+                  <h6 class="text-lg">{{ doctor.name }}</h6>
+                  <p class="text-xs">{{ doctor.qualifications }}</p>
+                </div>
+              </div>
+              <div @click="doctor.added = !doctor.added">
+                <Button :severity="doctor.added ? 'success' : 'info'" aria-label="Search">
+                  <font-awesome-icon
+                    :icon="doctor.added ? 'check' : 'user-plus'"
+                    style="color: #ffffff"
+                    class="mx-auto"
+                  />
+                </Button>
+              </div>
+            </div>
+            <Divider style="margin-top: 18px; margin-bottom: 18px" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
