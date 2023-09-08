@@ -91,9 +91,9 @@
     <div class="flex flex-row px-4 py-6 max-h-full">
       <div class="max-w-[33.333%] basis-1/3 py-2">
         <div class="flex flex-col h-[80%]">
-          <div class="mb-6 bg-white rounded-md max-h-full">
+          <div class="mb-6 bg-white max-h-full">
             <div class="text-lg font-bold pl-5">
-              <h6 class="py-4">APPOINTMENTS</h6>
+              <h6 class="py-5">APPOINTMENTS</h6>
               <p class="text-3xl pb-2">4,973</p>
             </div>
             <div>
@@ -105,9 +105,9 @@
               />
             </div>
           </div>
-          <div class="mb-6 bg-white rounded-md max-h-full">
+          <div class="mb-6 bg-white max-h-full">
             <div class="text-lg font-bold pl-5">
-              <h6 class="py-4">NEW PATIENTS</h6>
+              <h6 class="py-5">NEW PATIENTS</h6>
               <p class="text-3xl pb-2">650</p>
             </div>
             <div>
@@ -116,7 +116,7 @@
           </div>
           <div class="bg-white rounded-md">
             <div class="text-lg font-bold pl-5">
-              <h6 class="py-4">HOSPITAL EARNING</h6>
+              <h6 class="py-5">HOSPITAL EARNING</h6>
               <p class="text-3xl pb-2">3,473</p>
             </div>
             <div>
@@ -126,8 +126,8 @@
         </div>
       </div>
       <!-- Second Row / Second -->
-      <div class="basis-1/3 max-w-[33.333%] py-2 px-6 flex">
-        <div class="bg-slate-300 flex justify-center w-full">
+      <div class="basis-1/3 max-w-[33.333%] py-2 px-3 flex rounded-md">
+        <div class="bg-slate-300 flex justify-center w-full rounded-md">
           <Calendar v-model="date" inline showWeek class="w-full" />
         </div>
       </div>
@@ -152,7 +152,7 @@
         <div class="pt-[30px] flex flex-col items-center">
           <h2 class="text-2xl text-black font-semibold">Anny Farisha</h2>
           <p class="font-normal pt-2 text-base text-black">Doctor</p>
-          <p class="pt-5 font-light">
+          <p class="pt-5 font-light px-4 text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc
           </p>
         </div>
@@ -182,8 +182,8 @@
     </div>
     <!-- Third Row / First -->
     <div class="flex">
-      <div class="basis-1/2 max-w-[50%] px-4 py-2">
-        <div class="bg-white pt-5 px-4 py-4">
+      <div class="basis-1/2 max-w-[50%] px-4 py-2 rounded-md">
+        <div class="bg-white py-[7px] px-4 rounded-md">
           <div>
             <h3 class="text-black font-bold text-lg">HOSPITAL BIRTH & DEATH ANALYTICS</h3>
           </div>
@@ -278,8 +278,8 @@
       </div>
 
       <!-- Third Row / Second -->
-      <div class="basis-1/2 max-w-[50%] px-4 py-2">
-        <div class="py-2 px-4 pt-5 bg-white">
+      <div class="basis-1/2 max-w-[50%] px-4 py-2 rounded-md">
+        <div class="py-2 px-4 pt-5 bg-white rounded-md">
           <div class="flex justify-between items-center">
             <div class="text-black font-bold text-lg">
               <h6>HOSPITAL STAFF</h6>
@@ -314,7 +314,7 @@
           </div>
           <Divider />
         </div>
-        <div class="bg-white">
+        <div class="bg-white rounded-md">
           <Carousel
             :value="doctor"
             :numVisible="4"
@@ -533,7 +533,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row px-4 py-6">
+    <div class="flex px-4 py-6">
       <div class="basis-1/2 max-w-[50%] mr-6">
         <div class="bg-white py-4 px-4 rounded-md">
           <div class="text-lg text-black font-bold">
@@ -556,37 +556,41 @@
               }"
             />
           </div>
-          <div class="flex justify-between items-center">
-            <div class="flex flex-col pr-[80px]">
-              <h5 class="w-[100px] mb-2">Weekday Engagement</h5>
-              <p class="text-xs text-slate-700">45.07%</p>
-              <p class="text-xs text-green-600">+28.44%</p>
-              <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
-            </div>
-            <div class="w-full pt-10">
-              <Chart
-                type="line"
-                :data="chartAppointment"
-                :options="chartOptions"
-                class="h-[4rem]"
-              />
+          <div>
+            <div class="flex flex-row justify-between items-end">
+              <div class="flex flex-col pr-[50px]">
+                <h5 class="w-[100px] mb-2">Weekday Engagement</h5>
+                <p class="text-xs text-slate-700">45.07%</p>
+                <p class="text-xs text-green-600">+28.44%</p>
+                <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
+              </div>
+              <div class="w-full min-w-[100px]">
+                <Chart
+                  type="line"
+                  :data="chartAppointment"
+                  :options="chartOptions"
+                  class="h-[4rem]"
+                />
+              </div>
             </div>
           </div>
           <Divider />
-          <div class="flex justify-between items-center">
-            <div class="flex flex-col pr-[80px]">
-              <h5 class="w-[100px] mb-2">Weekend Engagement</h5>
-              <p class="text-xs text-slate-700">45.07%</p>
-              <p class="text-xs text-green-600">+28.44%</p>
-              <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
-            </div>
-            <div class="w-full pt-10">
-              <Chart
-                type="line"
-                :data="chartAppointment"
-                :options="chartOptions"
-                class="h-[4rem]"
-              />
+          <div>
+            <div class="flex flex-row justify-between items-end">
+              <div class="flex flex-col pr-[50px]">
+                <h5 class="w-[100px] mb-2">Weekend Engagement</h5>
+                <p class="text-xs text-slate-700">45.07%</p>
+                <p class="text-xs text-green-600">+28.44%</p>
+                <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
+              </div>
+              <div class="w-full min-w-[100px]">
+                <Chart
+                  type="line"
+                  :data="chartAppointment"
+                  :options="chartOptions"
+                  class="h-[4rem]"
+                />
+              </div>
             </div>
           </div>
         </div>
