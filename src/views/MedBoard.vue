@@ -400,7 +400,12 @@
                 header="Patient"
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               >
@@ -420,7 +425,12 @@
                 header="Doctor"
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               ></Column>
@@ -430,7 +440,12 @@
                 sortable
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               ></Column>
@@ -440,7 +455,12 @@
                 sortable
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               ></Column>
@@ -449,7 +469,12 @@
                 header="Contact"
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               ></Column>
@@ -459,7 +484,12 @@
                 sortable
                 :pt="{
                   headerCell: {
-                    style: { 'background-color': '#009efb', color: 'white' }
+                    style: {
+                      'background-color': '#009efb',
+                      color: 'white',
+                      'padding-top': '5px',
+                      'padding-bottom': '5px'
+                    }
                   }
                 }"
               >
@@ -498,14 +528,142 @@
                 </Button>
               </div>
             </div>
-            <Divider style="margin-top: 18px; margin-bottom: 18px" />
+            <Divider />
           </div>
         </div>
       </div>
     </div>
     <div class="flex flex-row px-4 py-6">
-      <div class="basis-1/2 max-w-[50%]">6th Row</div>
-      <div class="basis-1/2 max-w-[50%]">6th Row</div>
+      <div class="basis-1/2 max-w-[50%] mr-6">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>DOCTOR ENGAGEMENTS</h6>
+          </div>
+          <Divider />
+          <div class="text-sm">
+            <p>Jan 25, 2021 to Feb 02, 2021</p>
+            <p>Jan 18, 2021 to Feb 24, 2021 (Prev)</p>
+          </div>
+          <div class="pt-4">
+            <Dropdown
+              v-model="selectedDoctor"
+              :options="doctorList"
+              option-label="name"
+              placeholder="Doctor's name here"
+              :pt="{
+                root: { style: { border: 'none' } },
+                input: { style: { 'padding-left': '0px' } }
+              }"
+            />
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col pr-[80px]">
+              <h5 class="w-[100px] mb-2">Weekday Engagement</h5>
+              <p class="text-xs text-slate-700">45.07%</p>
+              <p class="text-xs text-green-600">+28.44%</p>
+              <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
+            </div>
+            <div class="w-full pt-10">
+              <Chart
+                type="line"
+                :data="chartAppointment"
+                :options="chartOptions"
+                class="h-[4rem]"
+              />
+            </div>
+          </div>
+          <Divider />
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col pr-[80px]">
+              <h5 class="w-[100px] mb-2">Weekend Engagement</h5>
+              <p class="text-xs text-slate-700">45.07%</p>
+              <p class="text-xs text-green-600">+28.44%</p>
+              <p class="text-xs text-slate-700">VS 66.68% (Prev)</p>
+            </div>
+            <div class="w-full pt-10">
+              <Chart
+                type="line"
+                :data="chartAppointment"
+                :options="chartOptions"
+                class="h-[4rem]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basis-1/2 max-w-[50%]">
+        <div class="bg-white py-4 px-4 rounded-md">
+          <div class="text-lg text-black font-bold">
+            <h6>PATIENT TIMELINE</h6>
+          </div>
+          <Divider />
+          <div>
+            <div class="justify-between flex pb-6">
+              <div class="">
+                <Button rounded class="w-[30px] h-[40px] justify-center" severity="secondary">
+                  <font-awesome-icon
+                    icon="wheelchair"
+                    style="color: #ffffff"
+                    class="mx-auto"
+                    size="xl"
+                  />
+                </Button>
+                <Divider layout="vertical" />
+              </div>
+              <div class="flex flex-col px-6">
+                <h6>Patient Admission</h6>
+                <p class="flex text-xs font-light items-center">
+                  <span class="material-symbols-outlined text-base"> event </span>1 January, 2021
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam
+                  non nisi semper, ula in sodales vehicula....
+                </p>
+              </div>
+            </div>
+            <div class="justify-between flex pb-6">
+              <div class="">
+                <Button rounded class="w-[30px] h-[40px] justify-center" severity="info">
+                  <font-awesome-icon icon="user-doctor" style="color: #ffffff" size="xl" />
+                </Button>
+                <Divider layout="vertical" />
+              </div>
+              <div class="flex flex-col px-6">
+                <h6>Treatment Starts</h6>
+                <p class="flex text-xs font-light items-center">
+                  <span class="material-symbols-outlined text-base"> event </span>1 January, 2021
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam
+                  non nisi semper, ula in sodales vehicula....
+                </p>
+              </div>
+            </div>
+            <div class="justify-between flex pb-4">
+              <div class="">
+                <Button rounded class="w-[30px] h-[40px] justify-center" severity="success">
+                  <font-awesome-icon
+                    icon="check"
+                    style="color: #ffffff"
+                    class="mx-auto"
+                    size="xl"
+                  />
+                </Button>
+              </div>
+              <div class="flex flex-col px-6">
+                <h6>Patient Discharge</h6>
+                <p class="flex text-xs font-light items-center">
+                  <span class="material-symbols-outlined text-base"> event </span>1 January, 2021
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam
+                  non nisi semper, ula in sodales vehicula....
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flex flex-row px-4 py-6 h-full">
       <div class="basis-3/5 max-w-[60%] pr-6">
@@ -646,6 +804,7 @@ onMounted(() => {
   appointments.value = upcomingAppointData
 })
 
+const selectedDoctor = ref()
 const reports = ref(latestReports)
 const newPatientData = ref(newPatient)
 const doctorList = ref(doctorsList)

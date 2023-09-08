@@ -21,12 +21,14 @@ import {
   faWheelchair,
   faChevronLeft,
   faChevronRight,
-  faCheck
+  faCheck,
+  faUserDoctor
 } from '@fortawesome/free-solid-svg-icons'
 
 import PrimeVue from 'primevue/config'
 import 'primevue/resources/themes/lara-light-indigo/theme.css'
 
+import Dropdown from 'primevue/dropdown';
 import Menu from 'primevue/menu'
 import Chip from 'primevue/chip'
 import Divider from 'primevue/divider'
@@ -48,7 +50,8 @@ library.add(
   faWheelchair,
   faChevronLeft,
   faChevronRight,
-  faCheck
+  faCheck,
+  faUserDoctor
 )
 
 const app = createApp(App)
@@ -56,6 +59,7 @@ const app = createApp(App)
 app.use(PrimeVue)
 app.use(router)
 
+app.component('Dropdown', Dropdown)
 app.component('Column', Column)
 app.component('DataTable', DataTable)
 app.component('font-awesome-icon', FontAwesomeIcon).mount('#app')
