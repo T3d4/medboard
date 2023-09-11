@@ -777,7 +777,6 @@ onMounted(() => {
   chartPatientOptions.value = setChartPatientOptions()
   chartPatientIn.value = setPatientInChart()
   chartPatientInOptions.value = setChartPatientInOptions()
-  doctor.value = doctors
   appointments.value = upcomingAppointData
 })
 
@@ -785,7 +784,7 @@ const selectedDoctor = ref()
 const reports = ref(latestReports)
 const newPatientData = ref(newPatient)
 const doctorList = ref(doctorsList)
-const doctor = ref()
+const doctor = ref(doctors)
 const date = ref(Date())
 const chartAppointment = ref()
 const chartPatient = ref()
