@@ -284,33 +284,6 @@
             <div class="text-black font-bold text-lg">
               <h6>HOSPITAL STAFF</h6>
             </div>
-            <div class="float-right">
-              <Button
-                label="left"
-                style="
-                  border-color: black;
-                  background-color: white;
-                  border-width: 2px;
-                  padding: 5px;
-                "
-                class="flex justify-center w-[25px] h-[20px]"
-              >
-                <span class="material-symbols-outlined text-black"> chevron_left </span>
-              </Button>
-
-              <Button
-                label="left"
-                style="
-                  border-color: black;
-                  background-color: white;
-                  border-width: 2px;
-                  padding: 5px;
-                "
-                class="flex justify-center w-[25px] h-[20px] ml-3"
-              >
-                <span class="material-symbols-outlined text-black"> chevron_right </span>
-              </Button>
-            </div>
           </div>
           <Divider />
         </div>
