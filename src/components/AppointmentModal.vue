@@ -47,7 +47,7 @@
             </div>
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
               <label class="mb-2 mt-8 text-black" for="location"> Department Name</label>
-              <InputText id="location" type="text" placeholder="Report Period" class="h-10" />
+              <InputText id="location" type="text" placeholder="Department" class="h-10" />
             </div>
           </div>
           <div class="flex flex-row justify-between">

@@ -47,7 +47,7 @@
               <InputText id="report" type="text" placeholder="Acetaminophen" class="h-10" />
             </div>
             <div class="flex flex-col mr-2 min-w-[100px] w-[300px]">
-              <label class="mb-2 mt-8 text-black" for="report-period"> Period of Medication </label>
+              <label class="mb-2 mt-8 text-black" for="period"> Period of Medication </label>
               <InputText
                 id="report-period"
                 type="number"
