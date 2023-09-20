@@ -55,17 +55,17 @@
                     id="account-type"
                     class="rounded-md w-full pl-4 py-2 text-center outline-none shadow focus:outline-cyan-700 focus:outline-4"
                     v-model="signup.account"
+                    required
                   >
-                    <option value="patient">Patient</option>
+                    <option value="patient" selected>Patient</option>
                     <option value="doctor">Doctor</option>
                     <option value="surgeon">Surgeon</option>
                     <option value="pharmacist">Pharmacist</option>
                   </select>
                 </div>
               </div>
-
               <div class="flex flex-row w-full">
-                <div class="my-3 mx-4 w-full">
+                <div v-if="isPatient()" class="my-3 mx-4 w-full">
                   <div class="pb-3"><label for="mln">Medical License Number</label><br /></div>
                   <input
                     type="text"
@@ -130,6 +130,13 @@ import HeaderView from './HeaderView.vue'
 import { ref } from 'vue'
 
 const signup = ref({})
+
+const isPatient = () => {
+  if (signup.value.account == 'patient' || signup.value.account == undefined) {
+    return false
+  }
+  return true
+}
 </script>
 
 <style scoped>
