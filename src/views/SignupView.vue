@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div class="w-screen h-screen">
     <div
-      class="w-screen h-screen bg-cover"
+      class="w-full h-full min-h-[800px] bg-cover"
       style="background-image: url('/src/assets/images/signup.gif')"
     >
       <HeaderView />
@@ -11,111 +11,125 @@
         <div class="w-[50%] font-bold text-[40px] my-3">
           <h3 class="text-center">Create an Account</h3>
         </div>
-        <form
-          class="flex items-center justify-center bg-slate-500/40 rounded-lg min-w-[300px] w-[800px] py-4"
-          method="post"
-        >
-          <div class="flex flex-col w-[90%]">
-            <div class="flex flex-row w-full">
-              <div class="my-3 mx-4 w-[50%]">
-                <div class="pb-3"><label for="fname">First Name</label><br /></div>
-                <input
-                  type="text"
-                  name="fname"
-                  id="fname"
-                  placeholder="First Name"
-                  class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
-                  required
-                  autocomplete="on"
-                />
-              </div>
-              <div class="my-3 mx-4 w-[50%]">
-                <div class="pb-3"><label for="lname">Last Name</label><br /></div>
-                <input
-                  type="text"
-                  name="lname"
-                  id="lname"
-                  placeholder="Last Name"
-                  class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
-                  required
-                  autocomplete="on"
-                />
-              </div>
-            </div>
-            <div class="flex w-full flex-row">
-              <div class="my-3 mx-4 w-full">
-                <div class="pb-3 w-full">
-                  <label for="account-type">Select Account Type</label>
+        <div class="w-full flex justify-center items-center">
+          <form
+            class="flex items-center justify-center bg-slate-500/40 rounded-lg min-w-[300px] w-[40%] py-4"
+            method="post"
+          >
+            <div class="flex flex-col w-[90%]">
+              <div class="flex flex-row w-full">
+                <div class="my-3 mx-4 w-[50%]">
+                  <div class="pb-3"><label for="fname">First Name</label><br /></div>
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    placeholder="First Name"
+                    class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
+                    required
+                    autocomplete="on"
+                    v-model="signup.firstname"
+                  />
                 </div>
-                <select
-                  name="account-types"
-                  id="account-type"
-                  class="rounded-md w-full pl-4 py-2 text-center outline-none shadow focus:outline-cyan-700 focus:outline-4"
-                >
-                  <option value="patient">Patient</option>
-                  <option value="doctor">Doctor</option>
-                  <option value="surgeon">Surgeon</option>
-                  <option value="pharmacist">Pharmacist</option>
-                </select>
+                <div class="my-3 mx-4 w-[50%]">
+                  <div class="pb-3"><label for="lname">Last Name</label><br /></div>
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    placeholder="Last Name"
+                    class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
+                    required
+                    autocomplete="on"
+                    v-model="signup.lastname"
+                  />
+                </div>
               </div>
-            </div>
+              <div class="flex w-full flex-row">
+                <div class="my-3 mx-4 w-full">
+                  <div class="pb-3 w-full">
+                    <label for="account-type">Select Account Type</label>
+                  </div>
+                  <select
+                    name="account-types"
+                    id="account-type"
+                    class="rounded-md w-full pl-4 py-2 text-center outline-none shadow focus:outline-cyan-700 focus:outline-4"
+                    v-model="signup.account"
+                  >
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="surgeon">Surgeon</option>
+                    <option value="pharmacist">Pharmacist</option>
+                  </select>
+                </div>
+              </div>
 
-            <div class="flex flex-row w-full">
-              <div class="my-3 mx-4 w-full">
-                <div class="pb-3"><label for="mln">Medical License Number</label><br /></div>
+              <div class="flex flex-row w-full">
+                <div class="my-3 mx-4 w-full">
+                  <div class="pb-3"><label for="mln">Medical License Number</label><br /></div>
+                  <input
+                    type="text"
+                    name="mln"
+                    id="mln"
+                    placeholder="M.L.N"
+                    class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4 w-full kit"
+                    required
+                    autocomplete="on"
+                    maxlength="8"
+                    pattern="^[0-9]{1,8}$"
+                    v-model="signup.mln"
+                  />
+                </div>
+              </div>
+              <div class="my-3 mx-4">
+                <div class="pb-3"><label for="email">Email</label><br /></div>
                 <input
-                  type="text"
-                  name="mln"
-                  id="mln"
-                  placeholder="M.L.N"
-                  class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4 w-full kit"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
                   required
                   autocomplete="on"
-                  maxlength="8"
-                  pattern="^[0-9]{1,8}$"
+                  v-model="signup.email"
                 />
               </div>
-            </div>
-            <div class="my-3 mx-4">
-              <div class="pb-3"><label for="email">Email</label><br /></div>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
-                class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
-                required
-                autocomplete="on"
-              />
-            </div>
-            <div class="flex flex-row w-full">
-              <div class="my-3 mx-4 w-full">
-                <div class="pb-3"><label for="password">Password</label><br /></div>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                  class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4 w-full"
-                  required
-                  autocomplete="on"
-                />
+              <div class="flex flex-row w-full">
+                <div class="my-3 mx-4 w-full">
+                  <div class="pb-3"><label for="password">Password</label><br /></div>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4 w-full"
+                    required
+                    autocomplete="on"
+                    v-model="signup.password"
+                  />
+                </div>
+              </div>
+              <div class="w-full text-center justify-center py-2 px-4 flex text-white">
+                <button
+                  type="submit"
+                  class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900"
+                >
+                  Sign Up
+                </button>
               </div>
             </div>
-            <div class="w-full text-center py-2 text-white mx-2">
-              <button type="submit" class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900">
-                Sign Up
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup>
 import HeaderView from './HeaderView.vue'
+import { ref } from 'vue'
+
+const signup = ref({})
 </script>
 
 <style scoped>

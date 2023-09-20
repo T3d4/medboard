@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 flex flex-row w-full justify-end text-center text-white">
+  <div class="flex justify-end py-3 flex-row w-full text-center text-white">
     <div
       v-if="path == '/signup'"
       class="w-[150px] mx-6 py-2 rounded-full bg-cyan-800 hover:bg-cyan-950"

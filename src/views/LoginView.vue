@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div class="w-screen h-screen">
     <div
-      class="w-screen h-screen body bg-cover"
+      class="w-full h-full min-h-[800px] bg-cover"
       style="background-image: url('/src/assets/images/signup.gif')"
     >
       <HeaderView />
@@ -15,8 +15,8 @@
           class="flex items-center justify-center bg-slate-500/40 rounded-lg min-w-[300px] px-8 py-4 w-[30%]"
           method="post"
         >
-          <div class="flex flex-col">
-            <div class="flex flex-col">
+          <div class="flex flex-col w-full">
+            <div class="flex flex-col w-full">
               <div class="my-3 mx-4">
                 <div class="pb-3"><label for="email">Email</label><br /></div>
                 <input
@@ -27,10 +27,11 @@
                   class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
                   required
                   autocomplete="on"
+                  v-model="login.email"
                 />
               </div>
-              <div class="flex flex-row w-full">
-                <div class="my-3 mx-4 w-full">
+              <div class="flex flex-col w-full">
+                <div class="my-3 mx-4">
                   <div class="pb-3"><label for="password">Password</label><br /></div>
                   <input
                     type="password"
@@ -40,13 +41,14 @@
                     class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4 w-full"
                     required
                     autocomplete="on"
+                    v-model="login.password"
                   />
                 </div>
               </div>
-              <div class="w-full text-center py-2 text-white mx-2">
+              <div class="w-full text-center justify-center py-2 px-4 flex text-white">
                 <button
                   type="submit"
-                  class="w-full py-2 rounded-full bg-cyan-700 hover:bg-cyan-900"
+                  class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900"
                 >
                   Login
                 </button>
@@ -56,11 +58,14 @@
         </form>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup>
 import HeaderView from './HeaderView.vue'
+import { ref } from 'vue'
+
+const login = ref({})
 </script>
 
 <style scoped>
