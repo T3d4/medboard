@@ -1,14 +1,14 @@
 <template>
   <div class="w-screen h-screen">
     <div
-      class="w-full h-full min-h-[800px] bg-cover"
+      class="flex flex-col items-center w-full h-full min-h-[600px] text-xl font-medium text-slate-700 bg-cover overflow-auto"
       style="background-image: url('/src/assets/images/signup.gif')"
     >
       <HeaderView />
       <div
         class="flex flex-col justify-center items-center h-[70%] w-full text-xl font-medium text-slate-700"
       >
-        <div class="w-[30%] font-bold text-[40px] my-3">
+        <div class="w-[30%] font-bold text-[40px] my-5">
           <h3 class="text-center">Account Login</h3>
         </div>
         <form
