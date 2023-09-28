@@ -2,7 +2,7 @@
   <div class="w-screen h-screen">
     <div
       class="flex flex-col items-center w-full h-full min-h-[600px] text-xl font-medium text-slate-700 bg-cover overflow-auto"
-      style="background-image: url('/src/assets/images/signup.gif')"
+      style="background-image: url('http://medboard.b-cdn.net/images/signup.gif')"
     >
       <HeaderView />
       <div
@@ -13,7 +13,6 @@
         </div>
         <form
           class="flex items-center justify-center bg-slate-500/40 rounded-lg min-w-[300px] px-8 py-4 w-[30%]"
-          method="post"
         >
           <div class="flex flex-col w-full">
             <div class="flex flex-col w-full">
@@ -49,6 +48,7 @@
                 <button
                   type="submit"
                   class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900"
+                  @click.prevent="loginUser"
                 >
                   Login
                 </button>
@@ -64,8 +64,27 @@
 <script setup>
 import HeaderView from './HeaderView.vue'
 import { ref } from 'vue'
+import axios from 'axios'
+import router from '../router'
 
+const base = axios.create({
+  baseURL: 'http://localhost:5000/api/v1' // replace on production env
+})
 const login = ref({})
+
+const loginUser = () => {
+  console.log({ email: login.value.email, password: login.value.password })
+  base
+    .post('/login', { email: login.value.email, password: login.value.password })
+    .then((result) => {
+      console.log(result)
+      console.log('worked')
+      router.push('/home')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
 </script>
 
 <style scoped>

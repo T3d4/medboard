@@ -3,6 +3,7 @@ const { Schema } = require("mongoose")
 const mongoose = require('mongoose')
 const { isEmail } = require("validator")
 const { hashPassword } = require("../helpers/utils")
+const bcrypt = require('bcryptjs')
 
 const userSchema = new Schema({
     firstName: {
@@ -42,6 +43,18 @@ userSchema.pre('save', async function (next) {
     this.password = await hashPassword(this.password)
     next();
 })
+
+userSchema.statics.login = async function (email, password) {
+    const user = await this.findOne({ email })
+    if (user) {
+        const auth = await bcrypt.compare(password, user.password)
+        if (auth) {
+            return user
+        }
+        throw Error("Incorrect Password")
+    }
+    throw Error("Incorrect Email")
+}
 
 const User = mongoose.model('user', userSchema);
 
