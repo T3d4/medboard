@@ -32,3 +32,9 @@ mongoose.connect(dbURI)
     .catch((err) => {
         console.log(err)
     })
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back Vue's index.html file.
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(`${_dirname}/dist/index.html`))
+})
