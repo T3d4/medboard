@@ -63,19 +63,19 @@
 
 <script setup>
 import HeaderView from './HeaderView.vue'
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import axios from 'axios'
 import router from '../router'
 
 const base = axios.create({
   baseURL: 'http://localhost:5000/api/v1' // replace on production env
 })
-const login = ref({})
+const login = reactive({})
 
 const loginUser = () => {
-  console.log({ email: login.value.email, password: login.value.password })
+  console.log(login)
   base
-    .post('/login', { email: login.value.email, password: login.value.password })
+    .post('/login', login)
     .then((result) => {
       console.log(result)
       console.log('worked')
