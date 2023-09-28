@@ -7,7 +7,7 @@
     "timing": "5:00 PM",
     "contact": "+01-789-654-123",
     "status": false,
-    "image": "/src/assets/images/doctor-1.jpg"
+    "image": "http://medboard.b-cdn.net/images/doctor-1.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "timing": "8:00 PM",
     "contact": "+10-654-654-991",
     "status": true,
-    "image": "/src/assets/images/doctor-2.jpg"
+    "image": "http://medboard.b-cdn.net/images/doctor-2.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "timing": "10:00 AM",
     "contact": "+10-709-254-445",
     "status": false,
-    "image": "/src/assets/images/doctor-3.jpg"
+    "image": "http://medboard.b-cdn.net/images/doctor-3.jpg"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "timing": "2:00 PM",
     "contact": "+10-102-225-333",
     "status": true,
-    "image": "/src/assets/images/doctor-4.jpg"
+    "image": "http://medboard.b-cdn.net/images/doctor-4.jpg"
   },
   {
     "id": 5,
@@ -47,6 +47,6 @@
     "timing": "5:00 PM",
     "contact": "+01-222-111-345",
     "status": false,
-    "image": "/src/assets/images/doctor-5.jpg"
+    "image": "http://medboard.b-cdn.net/images/doctor-5.jpg"
   }
 ]

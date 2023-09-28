@@ -5,7 +5,7 @@
         "email": "Richard288@gmail.com",
         "contact": "+1-202-555-0875",
         "disease": "Fever",
-        "image": "/src/assets/images/doctor-1.jpg"
+        "image": "http://medboard.b-cdn.net/images/doctor-1.jpg"
     },
     {
         "id": 1,
@@ -13,7 +13,7 @@
         "email": "William88@gmail.com",
         "contact": "+1-232-655-7875",
         "disease": "Eye",
-        "image":"/src/assets/images/doctor-4.jpg"
+        "image":"http://medboard.b-cdn.net/images/doctor-4.jpg"
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "email": "JohnDoe323@gmail.com",
         "contact": "+1-512-095-0875",
         "disease": "Typhoid",
-        "image":"/src/assets/images/doctor-5.jpg"
+        "image":"http://medboard.b-cdn.net/images/doctor-5.jpg"
     },
     {
         "id": 3,
@@ -29,7 +29,7 @@
         "email": "Martin8@gmail.com",
         "contact": "+1-302-655-8875",
         "disease": "Cancer",
-        "image":"/src/assets/images/doctor-3.jpg"
+        "image":"http://medboard.b-cdn.net/images/doctor-3.jpg"
     },
     {
         "id": 4,
@@ -37,6 +37,6 @@
         "email": "Robert434@gmail.com",
         "contact": "+1-247-905-0875",
         "disease": "Diabetes",
-        "image":"/src/assets/images/doctor-8.jpg"
+        "image":"http://medboard.b-cdn.net/images/doctor-8.jpg"
     }
 ]
