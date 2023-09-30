@@ -18,7 +18,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: LoginView
     },
@@ -30,26 +30,25 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.name == from.name) {
-    return next()
-  }
-  next()
-  console.log(cookies.get("jwt"))
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    const jwt = cookies.get("jwt")
-    console.log(jwt)
-    if (jwt == null) {
-      next({ path: "/" })
-    }
-    else {
-      next()
-    }
-  }
-  else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   if (to.name === from.name) {
+//     return next()
+//   }
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     const jwt = cookies.get("jwt")
+//     console.log("kinda working")
+//     if (jwt == null) {
+//       next({ path: "/login" })
+//     }
+//     else {
+//       console.log(jwt)
+//       return next()
+//     }
+//   }
+//   else {
+//     next()
+//   }
+// })
 
 
 export default router
