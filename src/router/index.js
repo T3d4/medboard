@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
     console.log("kinda working")
     // Change back to !== null later
     if (jwt !== null) {
-      next({ path: "/home" })
+      return next({ path: "/home" })
     }
     else {
       console.log(jwt)
