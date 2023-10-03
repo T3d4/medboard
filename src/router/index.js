@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
     const jwt = cookies.get("jwt")
     console.log("kinda working")
     // Change back to !== null later
-    if (jwt == null) {
+    if (!jwt) {
       next({ path: "/home" })
     }
     else {
