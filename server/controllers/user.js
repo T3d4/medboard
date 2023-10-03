@@ -20,7 +20,7 @@ const registerUser = async (req, res, next) => {
             const user = await User.create({ email, firstName, lastName, accountType, password, mln });
 
             const token = generateJWT(user._id)
-            res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+            res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000, secure: true, sameSite: "lax" })
             res.status(201).json({ user: user._id })
             return next()
         } catch (err) {
@@ -34,7 +34,7 @@ const registerUser = async (req, res, next) => {
         try {
             const user = await User.create({ email, firstName, lastName, accountType, password, mln: null });
             const token = generateJWT(user._id)
-            res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000, secure: false, sameSite: "none" })
+            res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000, secure: true, sameSite: "lax" })
             res.status(201).json({ user: user._id })
             return next()
         } catch (err) {
@@ -69,7 +69,7 @@ const loginUser = async (req, res, next) => {
         if (email && password) {
             const user = await User.login(email, password)
             const token = generateJWT(user._id)
-            res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000, secure: false, sameSite: "none" })
+            res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000, secure: true, sameSite: "lax" })
             res.status(201).json({ user: user._id })
             next()
         }
