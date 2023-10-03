@@ -13,6 +13,7 @@
         </div>
         <form
           class="flex items-center justify-center bg-slate-500/40 rounded-lg min-w-[300px] px-8 py-4 w-[30%]"
+          method="post"
         >
           <div class="flex flex-col w-full">
             <div class="flex flex-col w-full">

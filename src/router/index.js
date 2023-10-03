@@ -18,7 +18,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: LoginView
     },
@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
     const jwt = cookies.get("jwt")
     console.log("kinda working")
     if (jwt == null) {
-      next({ path: "/login" })
+      next({ path: "/" })
     }
     else {
       console.log(jwt)

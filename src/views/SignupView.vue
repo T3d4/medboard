@@ -27,7 +27,7 @@
                   class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
                   required
                   autocomplete="on"
-                  v-model="signup.firstname"
+                  v-model="signup.firstName"
                 />
               </div>
               <div class="my-3 mx-4 w-[50%]">
@@ -40,7 +40,7 @@
                   class="pl-4 py-2 rounded-lg outline-none shadow focus:outline-cyan-700 focus:outline-4"
                   required
                   autocomplete="on"
-                  v-model="signup.lastname"
+                  v-model="signup.lastName"
                 />
               </div>
             </div>
@@ -53,7 +53,7 @@
                   name="account-types"
                   id="account-type"
                   class="rounded-md w-full pl-4 py-2 text-center outline-none shadow focus:outline-cyan-700 focus:outline-4"
-                  v-model="signup.account"
+                  v-model="signup.accountType"
                   required
                 >
                   <option value="patient" selected>Patient</option>
@@ -109,7 +109,11 @@
               </div>
             </div>
             <div class="w-full text-center justify-center py-2 px-4 flex text-white">
-              <button type="submit" class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900">
+              <button
+                type="submit"
+                class="w-[95%] py-2 rounded-full bg-cyan-700 hover:bg-cyan-900"
+                @click.prevent="signupUser"
+              >
                 Sign Up
               </button>
             </div>
@@ -122,12 +126,32 @@
 
 <script setup>
 import HeaderView from './HeaderView.vue'
-import { ref } from 'vue'
+import { reactive } from 'vue'
+import axios from 'axios'
+import router from '../router'
 
-const signup = ref({})
+const signup = reactive({})
+
+const base = axios.create({
+  baseURL: 'http://localhost:5000/api/v1' // replace on production env
+})
+
+const signupUser = () => {
+  console.log(signup)
+  base
+    .post('/signup', signup)
+    .then((result) => {
+      console.log(result)
+      console.log('worked')
+      router.push('/home')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
 
 const isPatient = () => {
-  if (signup.value.account == 'patient' || signup.value.account == undefined) {
+  if (signup.accountType == 'patient' || signup.accountType == undefined) {
     return false
   }
   return true
