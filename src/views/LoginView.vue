@@ -69,7 +69,7 @@ import axios from 'axios'
 import router from '../router'
 
 const base = axios.create({
-  baseURL: 'http://localhost:5000/api/v1' // replace on production env
+  baseURL: 'https://medboard.onrender.com/api/v1' // replace on production env
 })
 const login = reactive({})
 
