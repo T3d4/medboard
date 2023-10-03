@@ -74,12 +74,10 @@ const base = axios.create({
 const login = reactive({})
 
 const loginUser = () => {
-  console.log(login)
   base
     .post('/login', login)
     .then((result) => {
       console.log(result)
-      console.log('worked')
       router.push('/home')
     })
     .catch((err) => {

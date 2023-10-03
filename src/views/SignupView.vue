@@ -137,12 +137,10 @@ const base = axios.create({
 })
 
 const signupUser = () => {
-  console.log(signup)
   base
     .post('/signup', signup)
     .then((result) => {
       console.log(result)
-      console.log('worked')
       router.push('/home')
     })
     .catch((err) => {
