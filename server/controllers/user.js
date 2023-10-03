@@ -3,7 +3,7 @@ const { handleErrors } = require('../helpers/response')
 const { generateJWT } = require('../helpers/utils')
 const User = require('../models/User')
 
-const maxAge = 24 * 60 * 60;
+const maxAge = 30 * 60;
 
 const registerUser = async (req, res, next) => {
     const {
