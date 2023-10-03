@@ -25,7 +25,7 @@ mongoose.connect(dbURI)
         () => {
             console.log("Database connected!")
             app.listen(process.env.PORT || 5000, () => {
-                console.log(`The server is running on port ${process.env.PORT}`)
+                console.log(`The server is running on port ${process.env.PORT} || 5000`)
             })
         }
     )
