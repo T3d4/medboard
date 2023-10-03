@@ -72,11 +72,20 @@ const base = axios.create({
   baseURL: 'https://medboard.onrender.com/api/v1' // replace on production env
 })
 const login = reactive({})
+const config = {
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  },
+  mode: 'cors',
+  credentials: 'include',
+  withCredentials: true
+}
 
 const loginUser = () => {
   console.log(login)
   base
-    .post('/login', login)
+    .post('/login', login, config)
     .then((result) => {
       console.log(result)
       console.log('worked')
