@@ -133,7 +133,7 @@ import router from '../router'
 const signup = reactive({})
 
 const base = axios.create({
-  baseURL: 'https://mdboard.onrender.com/api/v1' // replace on production env
+  baseURL: 'https://medboard.onrender.com/api/v1' // replace on production env
 })
 
 const signupUser = () => {
