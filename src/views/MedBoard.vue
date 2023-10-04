@@ -183,8 +183,8 @@
     <!-- Third Row / First -->
     <div class="flex">
       <div class="basis-1/2 max-w-[50%] h-[305px] px-2 pl-4 py-2 rounded-md">
-        <div class="bg-white py-[7px] px-4 rounded-md h-full">
-          <div>
+        <div class="bg-white py-2 px-4 rounded-md h-full">
+          <div class="pt-2">
             <h3 class="text-black font-bold text-lg">HOSPITAL BIRTH & DEATH ANALYTICS</h3>
           </div>
           <Divider />
