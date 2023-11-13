@@ -2,7 +2,7 @@
   <div class="w-screen h-screen">
     <div
       class="flex flex-col items-center w-full h-full min-h-[600px] text-xl font-medium text-slate-700 bg-cover overflow-auto"
-      style="background-image: url('http://medboard.b-cdn.net/images/signup.gif')"
+      style="background-image: url('http://medboard.b-cdn.net/medboard/signup.gif')"
     >
       <HeaderView />
       <div
@@ -77,8 +77,11 @@ const loginUser = () => {
   base
     .post('/login', login)
     .then((result) => {
-      console.log(result)
-      router.push('/home')
+      if (result.accesstkn) {
+        router.push('/home')
+      } else {
+        router.push('/')
+      }
     })
     .catch((err) => {
       console.log(err)

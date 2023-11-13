@@ -66,9 +66,10 @@ const loginUser = async (req, res, next) => {
     try {
         if (email && password) {
             const user = await User.login(email, password)
-            const token = generateJWT(user._id)
-            res.cookie('jwt', token, { httpOnly: false, maxAge: maxAge * 1000, secure: false })
-            res.status(201).json({ user: user._id })
+            const accessToken = generateJWT(user._id)
+            const refreshToken = generateJWT(user._id)
+            res.cookie('jwt', refreshToken, { httpOnly: false, maxAge: maxAge * 1000, secure: false });
+            res.status(201).json({ user: user._id, accesstkn: accessToken })
             next()
         }
     } catch (error) {
